@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <title>테스트1</title>
+     <!-- 파비콘 사용시 주석해제 -->
+     <meta name="Title" content="SJ E&M">
+     <meta name="Subject" content="SJ E&M">
+     <meta name="Author" content="SJ E&M">
+     <meta name="Keywords" content="SJ E&M,HIT">
+     <meta name="Description" content="SJ E&M은 모바일플랫폼과 게임을 서비스하는 플랫폼회사입니다.">
+     <meta name="Robots" content="INDEX,FOLLOW">
+     <meta property="og:type" content="website">
+     <meta property="og:title" content="SJ E&M">
+     <meta property="og:description" content="SJ E&M은 모바일플랫폼과 게임을 서비스하는 플랫폼회사입니다.">
+     <meta property="og:image" content="http://www.sj-enm.com/images/logo.png">
+     <meta property="og:url" content="http://www.sj-enm.com/kr/">
+     <meta name="twitter:card" content="summary">
+     <meta name="twitter:title" content="SJ E&M">
+     <meta name="twitter:description" content="SJ E&M은 모바일플랫폼과 게임을 서비스하는 플랫폼회사입니다.">
+     <meta name="twitter:image" content="../images/logo.png">
+     <meta name="twitter:domain" content="http://www.sj-enm.com/kr/">
+     <meta name="google-site-verification" content="구글 인증">
+     <meta name="naver-site-verification" content="">
+     <!-- <meta name="viewport" content="width=1100"> -->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=0, target-densitydpi=medium-dpi" />
+     <!-- 모바일사이트, 반응형사이트 제작시 사용 -->
+     <link rel="stylesheet" href="../css/reset.css">
+     <link rel="stylesheet" href="../css/common.css">
+     <link rel="stylesheet" href="../css/editor.css">
+     <link rel="stylesheet" href="../css/layout.css">
+     <link rel="stylesheet" href="../css/content.css">
+     <link rel="stylesheet" href="../css/board.css"><!-- 게시판관련 제작시 사용 -->
+
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+     <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+     <script src="../js/vendor/jquery.easing.1.3.js"></script>
+     <script src="../js/vendor/jquery.scrollTo.min.js"></script>
+     <script src="../js/common.js"></script>
+     <script src="../js/layer_popup.js"></script>
+
+     <!-- 아이콘폰트 -->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!-- 메인비주얼 플러그인 -->
+     <link rel="stylesheet" type="text/css" href="../css/plugin/slick.css">
+     <script src="../js/plugin/slick.js"></script>
+
+     <style>
+          /* css */
+.recruit-detail-box dl dd > p span{font-size:18px;}
+.sub-page-loc.page-prev > p a img{position:absolute; /*top:-23px; left:55px;*/top:-73px; left:105px;}
+.sub-page-loc.page-prev > p a img.on{top:-23px; left:55px;
+	-moz-transition:all 0.7s, opacity 0.5s;
+	-ms-transition:all 0.7s, opacity 0.5s;
+	-webkit-transition:all 0.7s, opacity 0.5s;
+	-o-transition:all 0.7s, opacity 0.5s;
+	transition:all 0.7s, opacity 0.5s;
+}
+.sub-page-loc.page-next > p a img{position:absolute; /*bottom:20px; right:38px;*/top:24px; right:-50px;}
+.sub-page-loc.page-next > p a img.on{top:24px; right:0px;
+	-moz-transition:all 0.7s, opacity 0.5s;
+	-ms-transition:all 0.7s, opacity 0.5s;
+	-webkit-transition:all 0.7s, opacity 0.5s;
+	-o-transition:all 0.7s, opacity 0.5s;
+	transition:all 0.7s, opacity 0.5s;
+}
+@media all and (max-width:1500px){
+	.sub-page-loc.page-prev > p a img{top:-83px; left:106px;}
+	.sub-page-loc.page-prev > p a img.on{top:-33px; left:56px;}
+	.sub-page-loc.page-next > p a img{width:260px; top:-25px; right:-55px;}
+	.sub-page-loc.page-next > p a img.on{top:-25px; right:-5px;}
+}
+</style>
+     <script>
+          jQuery(function ($) {
+               if ($(".sidebar-list").length > 0) {
+                    $(window).scroll(function () {
+                         var scroll_Top = $(window).scrollTop();
+                         var startTop = $("#infoContainer").offset().top - 95;
+
+                         if (scroll_Top > startTop) {
+                              $(".sidebar-box").addClass("fixed");
+                         } else {
+                              $(".sidebar-box").removeClass("fixed");
+                         }
+
+
+                         var menuCount = $(".sidebar-list li").size();
+                         var nav = new Array();
+                         for (var i = 0; i < menuCount; i++) {
+                              nav[i] = "nav" + i;
+                              nav[i] = $($(".sidebar-list li").eq(i).find("a").attr("href")).offset().top - 95;
+                         }
+
+                         $(".sidebar-list li").each(function (idx) {
+                              if (scroll_Top >= nav[idx]) {
+                                   $('.sidebar-list li').removeClass('on');
+                                   $('.sidebar-list li').eq(idx).addClass('on');
+                              };
+                         });
+                    });
+                    $(".sidebar-list li a").click(function () {
+                         var goDiv = $($(this).attr("href")).offset().top - 90;
+                         $("html, body").animate({ scrollTop: goDiv }, 300, "swing");
+
+                         return false;
+                    });
+               }
+          });
+     </script>
+     <script>
+          $(function () {
+               dep1 = 03,
+                    dep2 = 01;
+
+               // sub2_num 변수가 있을때 ( 3차메뉴 )
+               dep3 = "";
+               if (dep3) {
+                    $(".snb > li").eq(dep2 - 1).find(".gnb-3dep").show().children("li").eq(dep3 - 1).addClass("on");
+               }
+
+               if (dep1 > 0 && dep2 > 0) {
+                    $(".sub-visual-img").addClass("on");
+                    //$("#footer").hide();
+                    $("#footer").css('background-color', '#e6ebef');
+                    //$(".sub-page-loc > p a img").addClass("on");
+               }
+               if (dep1 == 1) {
+                    $(".sidebar-list").addClass("style-1");
+                    $(".snb").remove();
+               }
+               if (dep1 == 2) {
+                    // $(".sidebar-box").remove();
+                    // $(".snb").addClass("style-2");
+                    $(".sidebar-list").addClass("style-2");
+                    $(".snb").remove();
+               }
+               if (dep1 == 3) {
+                    // $(".sidebar-box").remove();
+                    // $(".snb").addClass("style-1");
+                    $(".sidebar-list").addClass("style-1");
+                    $(".snb").remove();
+               }
+               if (dep1 == 4) {
+                    $(".sidebar-list").addClass("style-1");
+                    $(".snb").remove();
+               }
+          })
+     </script>
+     <script type="text/javascript" src="../js/nav.js"></script>
+     <script type="text/javascript" src="../js/sub.js"></script>
+     <script type="text/javascript">
+          $(window).load(function () {
+               dep1 = 03,
+                    dep2 = 01;
+
+               if (dep1 > 0 && dep2 > 0) {
+                    $(".sub-page-loc > p a img").addClass("on");
+               }
+          })
+     </script>
+     <script>
+          $(document).ready(function () {
+
+               $("#en_page").on('click', function () {
+                    alert('Comming Soon');
+               });
+          });
+     </script>
+</head>
+
+<body>
+     <!-- accessibility -->
+     <div class="cm-accessibility">
+          <a href="#container">본문바로가기</a>
+     </div>
+     <!-- //accessibility -->
+
+     <!-- code -->
+     <div id="wrap">
+          <!-- header -->
+          <header id="header">
+               <div id="headerInner" class="clearfix">
+                    <h1 class="logo"><a href="./index.html"><img src="../images/common/logo.png" alt="SJ E&M" /></a></h1>
+                    <nav id="gnb">
+                         <ul class="clearfix">
+                              <li class="gnb1"><a href="./info.html">기업소개</a></li>
+                              <li class="gnb1"><a href="./game_service1.html">서비스</a></li>
+                              <li class="gnb1"><a href="./recruiting.html">채용정보</a></li>
+                              <li class="gnb1"><a href="./proposal_guide.html">제휴문의</a></li>
+                         </ul>
+                         <!-- 움직이는 바 -->
+                         <div class="nav-on-icon">
+                              <span></span>
+                         </div>
+                    </nav>
+                    <ul class="language-box clearfix">
+                         <li class="select"><a href="./index.html">KR</a></li>
+						 <li class="split"><span>&#124;</span></li>
+                         <li><a href="javascript:void(0)" id="en_page">EN</a></li>
+                    </ul>
+					<nav id="gnb_mobile">
+						<ul class="clearfix">
+							<li class="gnb1"><a href="./info.html">기업소개</a></li>
+							<li class="gnb1"><a href="./game_service1.html">서비스</a></li>
+							<li class="gnb1"><a href="./recruiting.html">채용정보</a></li>
+							<li class="gnb1"><a href="./proposal_guide.html">제휴문의</a></li>
+						</ul>
+					</nav>
+               </div>
+          </header>
+          <!-- //header -->
+          <!-- container -->
+          <div id="container">
+               <!-- visual -->
+               <section id="visual">
+                    <p class="sub-visual-img">
+                         <img src="../images/recruit/banner_bg.png" alt="채용 배너" />
+                    </p>
+                    <div class="sub-page-loc page-prev">
+                         <!-- <p>
+                              <a href="">
+                                   <img id="subPrevImg" src="" alt="subPrevImg">
+                                   <em class="font-poppin"></em>
+                              </a>
+                         </p> -->
+                    </div>
+                    <div class="sub-page-loc page-next_recruit">
+                         <!-- <p>
+                              <a href="">
+                                   <img id="subNextImg" src="" alt="subNextImg">
+                                   <em class="font-poppin"></em>
+                              </a>
+                         </p> -->
+                    </div>
+                    <div class="sub-visual-txt">
+                         <div class="braket"><span></span></div>
+                         <h2>채용정보</h2>
+                         <h3 class="font-poppin">RECRUITING INFORMATION</h3>
+                         <p class="font-poppin">
+                              <span>Home</span>
+                              <span>&gt;</span>
+                              <span>채용정보</span>
+                              <span>&gt;</span>
+                              <span class="point">채용절차</span>
+                         </p>
+                    </div>
+                    <aside id="sideBar">
+                         <div class="sidebar-box">
+                              <ul class="sidebar-list clearfix">
+                                   <li class="on"><a href="#recruitCon01">채용절차</a></li>
+                                   <li><a href="#recruitCon02">직무소개</a></li>
+                                   <li><a href="#recruitCon03">복리후생</a></li>
+                                   <!-- <li><a href="#recruitCon04">복리후생</a></li> -->
+                              </ul>
+                         </div>
+                         <ul class="snb">
+                              <li class="on"><a href="#recruitCon01">채용절차</a></li>
+                              <li><a href="#recruitCon02">직무소개</a></li>
+                              <li><a href="#recruitCon03">복리후생</a></li>
+                              <!-- <li><a href="#recruitCon04">복리후생</a></li> -->
+                         </ul>
+                    </aside>
+               </section>
+               <!-- //visual -->
+               <!-- middleArea -->
+               <div id="middleArea">
+                    <!-- content -->
+                    <section id="content">
+                         <!-- 컨텐츠 내용 -->
+                         <article id="infoContainer" class="area">
+                              <div id="recruitCon01" class="sub-content">
+                                   <h3 class="sub-con-tit"><span>채용절차</span></h3>
+                                   <div class="recruit-sequence-box">
+                                        <img src="../images/content/recruiting.png">
+                                   </div>
+                                   <div class="recruit-detail-box">
+                                        <dl>
+                                             <dt><img src="../images/content/recruiting_list_img01.png" alt="서류심사" /></dt>
+                                             <dd>
+                                                  <strong>서류심사</strong>
+                                                  <p>
+                                                       가장 첫 관문으로 지원해 주신분의 생각과 지원분야에 대한 이해도를 평가합니다.<br>
+                                                       ※ 서류심사 후 지원부서에 따라서 실무 관련 테스트가 추가로 진행될 수 있습니다.
+                                                  </p>
+                                             </dd>
+                                        </dl>
+                                        <dl>
+                                             <dt style="text-align: center">
+                                                  <img src="../images/content/recruiting_list_img02.png" alt="실무진면접" /></dt>
+                                             <dd>
+                                                  <strong>실무진 면접</strong>
+                                                  <p>
+                                                       팀 또는 파트의 부서장이나 실무 담당자의 면접이 진행 됩니다.<br>
+                                                       지원자분의 역량과 업무 이해도를 평가 합니다.
+                                                  </p>
+                                             </dd>
+                                        </dl>
+                                        <dl>
+                                             <dt style="text-align: center">
+                                                  <img src="../images/content/recruiting_list_img03.png" alt="임원진면접" /></dt>
+                                             <dd>
+                                                  <strong>최종합격 통보</strong>
+                                                  <p>
+                                                       모든 면접을 통과하신분들에게 입사일,입사시 준비해야 하는 사항 등과 함께<br>
+                                                       최종 합격 소식을 전달 해 드립니다.
+                                                  </p>
+                                             </dd>
+                                        </dl>
+                                        <dl>
+                                             <dt style="text-align: center">
+                                                  <img src="../images/content/recruiting_list_img04.png" alt="최종합격통보" /></dt>
+                                             <dd>
+                                                  <strong>입사 인터뷰</strong>
+                                                  <p>
+                                                       '실무진 면접'을 통과하신분에 한하여 진행이 되며, 각 실의 임원진 분들이 진행하게 됩니다.<br>
+                                                       지원자분의 인성 등 실무적인 것들 이외의 분야를 중심으로 평가 합니다.
+                                                  </p>
+                                             </dd>
+                                        </dl>
+                                        <p class="recruit-info-txt">
+                                             <span>채용담당자</span>
+                                             <span><i class="material-icons">&#xE0BE;</i> sj-enm@sj-enm.com</span>
+                                        </p>
+                                   </div>
+                              </div>
+                              <div id="recruitCon02" class="sub-content">
+                                   <h3 class="sub-con-tit"><span>직무소개</span></h3>
+                                   <table class="job-info-tbl">
+                                        <colgroup>
+                                             <col width="198px">
+                                             <col width="902px">
+                                        </colgroup>
+                                        <thead>
+                                             <tr>
+                                                  <th>직무</th>
+                                                  <th>소개</th>
+                                             </tr>
+                                        </thead>
+                                        <tbody>
+                                             <tr>
+                                                  <td><b>플랫폼 사업전략</b></td>
+                                                  <td>
+                                                       <p>전반적인 업무 프로세스에 대한 지식을 기반으로 전체 코디네이션 하는 역할이며, 사업계획과 전략을<br>
+                                                            수립하고 개선을 지원함으로서 사업 경쟁력을 높이는 업무를 담당합니다.</p>
+                                                  </td>
+                                             </tr>
+                                             <tr>
+                                                  <td><b>글로벌 사업</b></td>
+                                                  <td>
+                                                       <p>해외 각국의 상황에 최적화 하여 현지 서비스의 원활한 진출 및 커뮤니케이션 업무를 담당합니다.
+                                                       </p>
+                                                  </td>
+                                             </tr>
+                                             <tr>
+                                                  <td><b>게임기획</b></td>
+                                                  <td>
+                                                       <p>방향성, 콘텐츠, 벨런스 등과 관련된 아이디어와 현재 트렌드에 맞는 환경을 설계하여 제안합니다.
+                                                       </p>
+                                                  </td>
+                                             </tr>
+                                             <tr>
+                                                  <td><b>원화</b></td>
+                                                  <td>
+                                                       <p>기획과 트렌드에 맞는 원화를 제작하여 이미지 방향성을 제시합니다.
+                                                       </p>
+                                                  </td>
+                                             </tr>
+                                             <tr>
+                                                  <td><b>UI, UX</b></td>
+                                                  <td>
+                                                       <p>사용자의 환경을 담당하는 UI디자인, 사용자의 경험을 담당하는 UX디자인을 통해 게임의 주요 환경과 경험을<br>
+                                                            제공 할 수 있도록 설계합니다.
+                                                       </p>
+                                                  </td>
+                                             </tr>
+                                             <tr>
+                                                  <td><b>3D</td>
+                                                  <td>
+                                                       <p>디지털 기술을 활용하여 가상의 삼차원공간을 만들어내고 이것을 사람의 눈으로 직접 들여다보는
+                                                            효과로 제작하여 실 사물처럼 생명을 넣어주는 역할을 합니다.
+                                                       </p>
+                                                  </td>
+                                             </tr>
+                                             <tr>
+                                                  <td><b>프로그램<br>(클라이언트/서버)</b></td>
+                                                  <td>
+                                                       <p>클라이언트 프로그래머는 플레와 구동 프로그램을 담당하며, <br>
+                                                            서버 프로그래머는 안정성과 정확한 작동을 위한 개발 업무를 담당합니다.
+                                                       </p>
+                                                  </td>
+                                             </tr>
+                                             <tr>
+                                                  <td><b>경영지원</b></td>
+                                                  <td>
+                                                       <p>직원 채용, 업무환경 조성등 총무업무의 전반을 담당합니다.
+                                                       </p>
+                                                  </td>
+                                             </tr>
+                                        </tbody>
+                                   </table>
+                              </div>
+                              <div id="recruitCon03" class="sub-content">
+                                   <h3 class="sub-con-tit"><span>복리후생</span></h3>
+                                   <table class="job-info-tbl">
+                                        <colgroup>
+                                             <col width="268px">
+                                             <col width="832px">
+                                        </colgroup>
+                                        <thead>
+                                             <tr>
+                                                  <th>복리후생 제도</th>
+                                                  <th>내역</th>
+                                             </tr>
+                                        </thead>
+                                        <tbody>
+                                             <tr>
+                                                  <td><b>경조사 지원</b></td>
+                                                  <td>
+                                                       <p>경조사 (결혼, 출산, 부모님 회갑, 고희 조사 등등) 지원 제도를 마련하여 직원분들의<br>
+                                                            기쁨과 슬픔을 함께 하고자 합니다.
+                                                       </p>
+                                                  </td>
+                                             </tr>
+                                             <tr>
+                                                  <td><b>건강검진 지원</b></td>
+                                                  <td>
+                                                       <p>임직원의 건강을 위하여 매년 전문기관을 통해 체계적인 건강 검진을 받을 수 있도록 운영하고 있습니다.</p>
+                                                  </td>
+                                             </tr>
+                                             <tr>
+                                                  <td><b>간식제공</b></td>
+                                                  <td>
+                                                       <p>직원들의 취향을 고려하여, 다양한 음료와 과자 등의 간식을 상시 제공하고 있습니다.</p>
+                                                  </td>
+                                             </tr>
+                                             <tr>
+                                                  <td><b>중,석식비 지원</b></td>
+                                                  <td>
+                                                       <p>직원들의 중식과 석식비를 지원하고 있습니다.</p>
+                                                  </td>
+                                             </tr>
+                                             <tr>
+                                                  <td><b>각종 필요 제품 제공</b></td>
+                                                  <td>
+                                                       <p>직장생활의 불편함을 해소하기 위해 각종 물품을 비치하여 필요시 편리하게<br>사용 할 수 있도록 지원 하고
+                                                            있습니다.</p>
+                                                  </td>
+                                             </tr>
+                                             <tr>
+                                                  <td><b>휴게시설 제공</b></td>
+                                                  <td>
+                                                       <p>각종 게임을 즐길 수 있는 공간을 마련하여 원활한 휴식을 즐길 수 있도록 지원하고 있습니다.</p>
+                                                  </td>
+                                             </tr>
+                                             <tr>
+                                                  <td><b>회식 및 워크샵 지원</b></td>
+                                                  <td>
+                                                       <p>전사 및 부서별 회식, 워크샵 프로그램을 통해 동료들 간에 뜻 깊은 시간을 가질 수 있도록 지원하고 있습니다.</p>
+                                                  </td>
+                                             </tr>
+                                             <tr>
+                                                  <td><b>명절 선물 지원</b></td>
+                                                  <td>
+                                                       <p>명절에는 전 직원 대상 명절 선물을 전달 해 드리고 있습니다.</p>
+                                                  </td>
+                                             </tr>
+                                        </tbody>
+                                   </table>
+
+                              </div>
+                              <div id="recruitCon04" class="sub-content last">
+                                   <script language="javascript">
+
+                                        function searchCheck(box) {
+                                             if (box.checked == false) {
+                                                  bbs_search_form.search_item.value = eval(bbs_search_form.search_item.value) - eval(box.value);
+                                             } else {
+                                                  bbs_search_form.search_item.value = eval(bbs_search_form.search_item.value) + eval(box.value);
+                                             }
+                                        }
+
+                                        function search() {
+                                             if (bbs_search_form.selected == false) {
+                                                  alert("검색을 체크해 주십시오.");
+                                             } else if (bbs_search_form.search_order.value == "") {
+                                                  alert("검색할 내용을 입력해 주십시오.");
+                                                  bbs_search_form.search_order.focus();
+                                             } else {
+                                                  bbs_search_form.submit();
+                                             }
+                                        }
+
+                                        var rollFlag = 0;
+                                        function roll_up(img_num) {
+                                             //    document.images["roll" + img_num].src = "img/service/roll_up.gif";
+                                        }
+
+                                        function roll_down(img_num) {
+                                             //    document.images["roll" + img_num].src = "img/service/roll_down.gif";
+                                        }
+
+                                        function txt_roll(str) {
+                                             sub_num = str.substring(str.length - 2);
+                                             sub_str = str.substring(0, str.length - 2);
+
+                                             if (document.all[str].style.display == "") {
+                                                  document.all[str].style.display = "none";
+                                                  roll_up(sub_num);
+                                                  rollFlag = 0;
+                                                  return;
+                                             }
+                                             else {
+                                                  if (rollFlag != 0) {
+                                                       document.all[sub_str + rollFlag].style.display = "none";
+                                                       roll_up(rollFlag);
+                                                       document.all[str].style.display = "";
+                                                       roll_down(sub_num);
+                                                  }
+
+                                                  document.all[str].style.display = "";
+                                                  roll_down(sub_num);
+                                                  rollFlag = sub_num;
+                                             }
+
+                                        }
+
+
+                                        function popup(arg, text) {
+
+                                             layer = eval("layer" + text);
+
+                                             if (arg == 'on') {
+                                                  layer.style.visibility = 'visible';
+                                                  layer.style.pixelTop = event.clientY + 15;
+                                                  layer.style.pixelLeft = event.clientX + 10;
+                                             }
+                                             else {
+                                                  layer.style.visibility = 'hidden';
+                                             }
+                                        }
+
+                                        function NewOpen(img, text1, text2) {
+                                             myheight = text2;
+                                             mywidth = text1;
+                                             mysize = "width=" + mywidth + ",height=" + myheight;
+                                             myimage = window.open("", "", mysize);
+                                             mysize = " width=" + mywidth + " height=" + myheight;
+                                             myimage.document.write("<html><head><title>이미지크게보기</title></head>");
+                                             myimage.document.write("<body topmargin=0 leftmargin=0>");
+                                             myimage.document.write("<img src=" + img + mysize + " onclick='self.close()' style='cursor:hand;'>");
+                                        }
+//-->
+                                   </script>
+                         </article>
+                         <!-- //컨텐츠 내용 -->
+                    </section>
+                    <!-- //content -->
+               </div>
+          </div>
+          <!-- //container -->
+          <!-- footer -->
+          <footer id="footer">
+				<div id="footerInner" class="clearfix area">
+					<h2 class="footer-logo fl"></h2>
+					<div class="footer-info fr">
+						<p style="margin-right:200px">
+								<v style="margin-right: 15px"><img src="../images/common/logo.png" alt='LOGO' /></v>
+							<span style="text-align: left"><i class="material-icons"></i>(주)대표이사 김선수 ( 사업자 등록번호: 357-87-01094 )<br>
+								주소 : 서울특별시 성동구 성수일로8길5 서울숲 SKVTOWER 1806호<br>
+									Tel : 02-6233-8236&nbsp;Fax : 02-6233-8235<br>
+									copyright&#169;SJ E&amp;M All right reserved.</span>
+						</p>
+					</div>
+				</div>
+			</footer>
+			<!-- 모바일 footer -->
+			<footer id="footer_m">
+				<div id="footerInner" class="clearfix area">
+					<h2 class="footer-logo fl"></h2>
+					<div class="footer-info">
+						<p>
+							<v style="margin-right: 15px;"><img src="../images/common/bk_logo.png" alt='LOGO' /></v>
+							<span style="text-align: left"><i class="material-icons"></i>(주)대표이사 김선수 ( 사업자 등록번호: 357-87-01094 )<br>
+								주소 : 서울특별시 성동구 성수일로8길5 서울숲 SKVTOWER 1806호<br>
+								Tel : 02-6233-8236&nbsp;Fax : 02-6233-8235<br>
+								copyright&#169;SJ E&amp;M All right reserved.</span>
+						</p>
+					</div>
+				</div>
+		   </footer>
+     </div>
+     <!-- //code -->
+</body>
+
+</html>

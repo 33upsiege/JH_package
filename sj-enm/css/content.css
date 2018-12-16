@@ -1,0 +1,256 @@
+@charset "utf-8";
+/* *******************************************************
+ * filename : content.css
+ * description : 서브페이지 컨텐츠 CSS
+ * date : 2017-05-29
+******************************************************** */
+
+
+/* ******************  기업소개 :: 공통 ********************** */
+#infoContainer{overflow:hidden;}
+#infoContainer .sub-content{width:100%; margin-top:135px;}
+#infoContainer .sub-content:first-child{margin-top:60px;}
+#infoContainer .sub-content.last{margin-bottom:160px;}
+.sub-con-tit{font-size:30px; line-height:44px; color:#000; font-weight:500; margin-bottom:29px; text-align:left;}
+/*.sub-con-tit:after{display:block; content:""; width:60px; height:2px; background-color:#00a1e9; margin-top:10px;}*/
+.sub-con-tit:after{display:none;}
+.sub-con-tit span{display:inline-block; border-bottom:2px solid #ff0000; padding-bottom:10px;}
+.subject-tit{font-size:23px; line-height:35px; color:#333; font-weight:400; padding-top:36px; margin-bottom:10px;text-shadow:2px 2px 7px rgba(0,0,0,0.1)}
+.subject-style01{display:block; font-size:26px; line-height:38px; color:#333; font-weight:400; margin-bottom:20px;text-shadow:2px 2px 7px rgba(0,0,0,0.1)}
+/* .subject-style01 span{color:#ff0000;} */
+.txt-style01{font-size:18px; line-height:30px; color:#333; margin-bottom:38px; font-weight:normal;}
+.txt-style02{font-size:21px; line-height:34px; color:#333; font-weight:400;}
+
+/* ******************  기업소개 :: 연혁 ********************** */
+.history-box{width:100%;}
+.history-box > dl{width:100%; display:table;}
+.history-box > dl dt, .history-box > dl dd{display:table-cell; vertical-align:sub;}
+.history-box > dl dt{width:75px; font-family:'Poppins','Noto Sans KR',"나눔고딕", NanumGothic, "Nanum Gothic","돋움", Dotum, Arial, sans-serif; font-size:24px; color:#333; font-weight:400;}
+.history-box > dl dd{width:1025px; background:url(../images/content/history_line_bg.jpg) repeat-y 12px top;}
+.history-info{width:100%;}
+.history-info.last{ padding-bottom:35px;}
+.history-info > p{width:100%; font-size:18px; color:#333; min-height:95px; line-height:95px;}
+.history-info em, .history-info span{vertical-align:middle;}
+.history-info em{display:inline-block; /*padding-left:59px; width:68px;*/padding-left:25px; width:102px; font-family:'Poppins','Noto Sans KR',"나눔고딕", NanumGothic, "Nanum Gothic","돋움", Dotum, Arial, sans-serif; font-size:18px; color:#333; background:url(../images/content/history_dot.png) no-repeat 10px center; text-align:center;}
+/*.history-info em:before{display:inline-block; vertical-align:middle; content:""; width:5px; height:5px; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; background-color:#aaa; position:relative; left:-49px;}*/
+.history-info span{display:inline-block; width:142px; text-align:center; margin-right:28px;}
+/* 연혁 첫번째 */
+.history-box > dl:first-child dt, .history-box > dl:first-child dd{vertical-align:top;}
+.history-info.start > p{line-height:normal; min-height:auto;}
+.history-info.start em, .history-info.start span{vertical-align:top;}
+.history-info.start em{background:url(../images/content/history_start.png) no-repeat left top;}
+.history-info.start em:before{display:none;}
+/* 연혁 마지막번째 */
+.history-box > dl.finish dt, .history-box > dl.finish dd{vertical-align:bottom;}
+.history-info.finish > p{line-height:normal; min-height:auto;}
+.history-info.finish em, .history-info.finish span{vertical-align:bottom;}
+.history-info.finish em{background:url(../images/content/history_icon02.jpg) no-repeat left bottom;}
+.history-info.finish em:before{display:none;}
+
+/* ******************  기업소개 :: 연혁 :: 영문 ********************** */
+.history-box.eng .history-info > p{overflow:hidden; display:table;}
+.history-box.eng .history-info em, .history-box.eng .history-info span, .history-box.eng .history-info strong{display:table-cell; vertical-align:middle; display:inline-block;}
+.history-box.eng .history-info.start > p em{vertical-align:top;}
+.history-box.eng .history-info span{margin-right:0;}
+.history-box.eng .history-info strong{width:697px; font-weight:400; line-height:30px; padding-left:28px;}
+
+/* ******************  기업소개 :: 소재지 및 연락처 ********************** */
+#mapCon{width:100%;margin:0 auto 20px}
+.loc-txt{margin:10px auto 0;font-size:16px; line-height:35px; color:#333;}
+.loc-txt i{vertical-align:middle;font-size:24px;color:#333;display:inline-block; margin-right:5px;}
+
+
+/* ******************  채용정보 ********************** */
+#recruitContainer{width:100%; padding:60px 0;}
+/* -------- 채용정보 :: 채용절차 -------- */
+.recruit-sequence-box{width:100%; /*padding-top:180px; background:url(../images/content/recruiting.png) no-repeat center top;*/ margin-bottom:250px;  background-size:100%; overflow:hidden;}
+.recruit-sequence-box > img{width:100%;}
+.recruit-sequence-box li{float:left; width:202px; margin-left:97px; margin-bottom:58px;}
+.recruit-sequence-box li:first-child{margin-left:0;}
+.recruit-sequence-box li > p{font-size:17px; line-height:25px; color:#333; text-align:center; padding-top:16px;}
+.recruit-sequence-box li > p span{display:block; font-size:14px; line-height:25px; color:#777;}
+.recruit-detail-box{width:100%;}
+.recruit-detail-box dl{width:100%; height:150px; background-color:#fff; display:table; border-bottom:1px solid #ddd;}
+.recruit-detail-box dl:first-child{border-top:1px solid #ddd;}
+.recruit-detail-box dl dt, .recruit-detail-box dl dd{display:table-cell; vertical-align:middle;}
+.recruit-detail-box dl dt{width:139px;}
+.recruit-detail-box dl dd > strong{display:block; font-size:18px; line-height:30px; color:#333; font-weight:400;}
+.recruit-detail-box dl dd > p{font-size:14px; line-height:30px; color:#333; font-weight:300;}
+.recruit-info-txt{text-align:right; padding-top:22px;}
+.recruit-info-txt > span{display:inline-block; vertical-align:middle; font-size:18px; line-height:30px; color:#333; font-weight:300; margin-left:32px;}
+.recruit-info-txt > span:first-child{font-weight:400; margin-left:0;}
+.recruit-info-txt > span i{vertical-align:middle;}
+/* -------- 채용정보 :: 직무소개 -------- */
+.job-info-tbl{width:100%;}
+.job-info-tbl th{height:50px; line-height:50px; text-align:center; font-size:15px; color:#333; font-weight:400; background-color:#e5e5e5; border-top:1px solid #555; border-bottom:1px solid #555;}
+.job-info-tbl td{background-color:#fff; border-bottom:1px solid #ddd; border-left:1px solid #ddd; padding:28px 0; text-align:left;}
+.job-info-tbl tr td:first-child{border-left:0;}
+.job-info-tbl td > p{font-size:15px; line-height:27px; color:#333; font-weight:300; padding-left:30px; padding-right:60px; word-break:keep-all;}
+.job-info-tbl td > b{font-size:15px; line-height:27px; color:#333; font-weight:400; display:block; padding-left:30px;}
+.job-info-tbl tr:hover td, .job-info-tbl tr:focus td{background-color:#f4f4f4;}
+
+/* ******************  IR정보 ********************** */
+#irContainer{width:100%; padding:60px 0;}
+.ir-content{text-align:left;}
+
+/* ******************  게임소개 ********************** */
+#gameContainer{width:100%; padding:60px 0;background:#edf3f7;}
+.game-info-content{margin-bottom:80px;}
+/* -------- 게임소개 :: 히트소개 -------- */
+.game-slide-box{width:100%; height:610px; overflow:hidden; position:relative;}
+.game-info-content .game-list-box{position:absolute; bottom:0; left:0; width:100%; height:150px; padding:30px 0 20px 0; background-color:rgba(0,0,0,0.35); z-index:8;}
+.game-list-box li img{width:148px; height:98px; border:1px solid #555; opacity:0.65;filter:Alpha(opacity=65); cursor:pointer;}
+.game-list-box li.slick-current img{opacity:1.0;filter:Alpha(opacity=100); border:1px solid #00a1e9;}
+.game-list-box .slick-prev, .game-list-box .slick-next{position:absolute; top:0; z-index:9}
+.game-list-box .slick-prev{left:0;}
+.game-list-box .slick-next{right:0;}
+.game-video-content{width:100%; height:1050px; background:url(../images/content/game_video_bg01.jpg) no-repeat left top;}
+.game-video-box{height:100%; overflow:hidden;}
+#videoTabList{width:1100px; margin:0px auto;}
+.video-list{width:100%; height:314px; padding-top:23px; text-align:left; position:relative;}
+.video-list li{display:inline-block; vertical-align:middle; float:left;}
+.video-list li .video-src{display:none;}
+.video-list li .video-btn{display:inline-block;}
+.video-list.type-01  li.v-list01{margin-top:94px;}
+.video-list.type-01  li.v-list02{/*margin-left:-22px;*/margin-left:-85px; margin-top:28px; position:relative; z-index:9;}
+.video-list.type-01  li.v-list03{/*margin-left:-32px;*/margin-left:-83px; margin-top:56px;}
+.video-list.type-01  li.v-list04{/*margin-left:-27px;*/margin-left:-48px; position:relative; z-index:9;}
+.video-list.type-01  li.v-list05{/*float:right; margin-left:-58px; margin-top:117px;*/position:absolute; top:130px; right:-40px;}
+.video-list.type-01  li.v-list01 .video-btn{width:299px; height:254px; background:url(../images/content/game_tab_img01.png) no-repeat;}
+.video-list.type-01  li.v-list01.selected .video-btn{background:url(../images/content/game_tab_img01_on.png) no-repeat;}
+.video-list.type-01  li.v-list02 .video-btn{width:233px; height:237px; background:url(../images/content/game_tab_img02.png) no-repeat;}
+.video-list.type-01  li.v-list02.selected .video-btn{background:url(../images/content/game_tab_img02_on.png) no-repeat;}
+.video-list.type-01  li.v-list03 .video-btn{width:386px; height:300px; background:url(../images/content/game_tab_img03.png) no-repeat;}
+.video-list.type-01  li.v-list03.selected .video-btn{background:url(../images/content/game_tab_img03_on.png) no-repeat;}
+.video-list.type-01  li.v-list04 .video-btn{width:262px; height:265px; background:url(../images/content/game_tab_img04.png) no-repeat;}
+.video-list.type-01  li.v-list04.selected .video-btn{background:url(../images/content/game_tab_img04_on.png) no-repeat;}
+.video-list.type-01  li.v-list05 .video-btn{width:254px; height:220px; background:url(../images/content/game_tab_img05.png) no-repeat;}
+.video-list.type-01  li.v-list05.selected .video-btn{background:url(../images/content/game_tab_img05_on.png) no-repeat;}
+
+.game-video-box .video iframe{width:1100px; height:620px;}
+.game-explanation-content{width:100%; height:909px; background:url(../images/content/game_explanation_bg01.jpg) no-repeat; position:relative; margin-bottom:75px;}
+.explanation-img{position:absolute; top:50px; left:50%; margin-left:-110px;}
+.game-txt-box{text-align:left; position:relative; padding-top:360px;text-shadow:2px 2px 7px rgba(0,0,0,0.4)}
+.game-txt-box p{font-size:18px; line-height:30px; color:#fff; font-weight:300; margin-bottom:40px;}
+.game-txt-box > div > p{display:inline-block; vertical-align:top;}
+/*.game-txt-box > div > p:first-child{margin-right:41px;}*/
+.game-txt-box p > span{font-size:28px; line-height:38px; display:block; margin-bottom:10px;}
+.game-txt-box p > b{color:#00a1e9; font-weight:300;}
+.game-link-content li{float:left; width:50%;}
+.game-link-content li > p{text-align:left; width:100%;}
+.game-link-content li > p a{display:inline-block; margin-left:25px; /*box-shadow:10px 10px 10px rgba(0, 0, 0, .05);*/}
+.game-link-content li > p a:first-child{margin-left:0;}
+/* -------- 게임소개 :: 오버히트소개 -------- */
+.game-info-txt{height:450px; text-align:left; background:url(../images/content/game_info_img02.png) no-repeat right top;}
+.game-info-txt > h4{font-size:36px; line-height:50px; color:#333; font-weight:300; letter-spacing:-0.5px; margin-bottom:27px; padding-top:55px;}
+.game-info-txt > h4 span{font-weight:600;}
+.game-info-txt > p{font-size:28px; line-height:40px; color:#333; font-weight:300; letter-spacing:-2px; margin-bottom:32px;}
+.game-info-txt span{color:#00a1e9}
+.game-feature-txt{padding-left:68px; height:510px; background:url(../images/content/game_info_img01.jpg) no-repeat center top; text-align:left;}
+.game-feature-txt > h4{font-size:36px; line-height:50px; letter-spacing:-0.5px; color:#fff; font-weight:400; padding-top:67px; margin-bottom:17px;}
+.game-feature-txt > h4 span{color:#00a1e9; font-weight:600;}
+.game-feature-txt ul li{font-size:22px; line-height:45px; color:#fff; letter-spacing:-0.5px;}
+.game-feature-txt ul li > span{display:inline-block; padding-right:13px; color:#00a1e9;}
+.game-feature-txt ul li > span i{vertical-align:middle;}
+
+
+.game-feature-content{width:100%; padding-top:483px; background:url(../images/content/game_info_img02.png) no-repeat center top; margin-bottom:50px;}
+.game-feature-list{width:100%; text-align:left;}
+.game-feature-list li{float:left; width:50%; min-height:130.2px; max-height:130.2px; margin-bottom:30px;}
+.game-feature-list li.point{width:100%;}
+.game-feature-list li > h4{font-size:22px; line-height:30px; font-weight:600; color:#333; letter-spacing:-0.5px; margin-bottom:10px;}
+.game-feature-list li p{font-size:18px; line-height:30px; color:#333; font-weight:300; letter-spacing:-0.5px; overflow:hidden;}
+.game-feature-list li p span{color:#b4b4b4; display:inline-block; padding-right:5px; float:left;}
+.game-feature-list li p b{color:#00a1e9; font-weight:300;}
+.game-feature-list li p i{vertical-align:middle;}
+.game-war-info-content{margin-bottom:50px;}
+.war-txt{font-size:26px; line-height:40px; color:#333; font-weight:400; letter-spacing:-1.3px; text-align:left; margin-bottom:80px;}
+.war-txt > span{color:#00a1e9;}
+
+
+/* -------- 채용정보 :: 채용공고 -------- */
+.recruit-notice-box{width:100%; margin-bottom:30px;}
+#faqList .faq-title{width:100%; font-size:16px; padding:19px 0; background-color:#e5e5e5; border-top:1px solid #555; overflow:hidden; display:table; color:#333;}
+#faqList .faq-title > span{display:table-cell; text-align:center;}
+#faqList .faq-title > span.num{width:10%;}
+#faqList .faq-title > span.tit{width:60%;}
+#faqList .faq-title > span.writer{width:10%;}
+#faqList .faq-title > span.date{width:10%;}
+#faqList .faq-title > span.view{width:10%;}
+
+#faqList dl{font-size:16px;}
+#faqList dt{overflow:hidden; padding:0; /*background:#f2f2f2;*/ border-bottom:1px solid #ddd;}
+#faqList dt:hover{background-color:#fff;}
+#faqList dl:first-child dt{border-top:1px solid #ddd;}
+#faqList dt .subject{display:table; color:#333; cursor:pointer; overflow:hidden; width:100%; padding:19px 0; font-weight:300;}
+#faqList dt .subject li{display:table-cell; text-align:center;}
+#faqList dt .subject li.num{width:10%;}
+#faqList dt .subject li.tit{width:60%; text-align:left; font-weight:400;}
+#faqList dt .subject li.tit  > p{display:inline-block; max-width:95%; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+#faqList dt .subject li.writer{width:10%;}
+#faqList dt .subject li.date{width:10%;}
+#faqList dt .subject li.view{width:10%;}
+#faqList dd{display:none; padding:50px 35px 110px 35px; border-bottom:1px solid #ddd;}
+#faqList dd > p{display:inline-block; line-height:22px;}
+.recruit-btn-box{width:100%; text-align:center;}
+.recruit-btn-box > a{display:inline-block; width:200px; height:45px; text-align:center; font-size:16px; color:#fff; font-weight:500; background-color:#00a1e9; line-height:45px;}
+
+
+/* -------- 게임 소개 :: 180214 -------- */
+.games-info-box{display:table; width:100%; margin-bottom:80px;text-shadow:2px 2px 7px rgba(0,0,0,0.1)}
+.games-left-info-box, .games-right-info-box{display:table-cell; vertical-align:top; width:45%; text-align:left; font-size:18px; word-break:keep-all; line-height: 26px}
+.games-left-info-box > h2{font-size:30px; line-height:46px; color:#333; letter-spacing:-0.5px; font-weight:400; margin-bottom:15px;}
+.games-left-info-box > h2 span{color:#00a1e9;}
+.games-left-info-box > p{word-break:keep-all; font-size: 18px line-height:34px; color:#333; font-weight:300; letter-spacing:-0.5px; }
+.games-left-info-box > p span{color:#00a1e9; word-break:keep-all; font-size: 18px}
+.games-video-box{position:relative; width:550px; padding-top:310px; }
+.games-video-box iframe, .games-video-box object, .games-video-box embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.games-feature-box{width:100%; height:500px; background:url(../images/content/games_img01.jpg) no-repeat center top; text-align:left;text-shadow:2px 2px 7px rgba(0,0,0,0.4)}
+.games-feature-inner{padding-top:90px;}
+.games-feature-inner > h3{font-size:36px; line-height:50px; color:#fff; font-weight:400; letter-spacing:-0.5px; margin-bottom:30px;}
+.games-feature-inner > h3 strong{font-weight:600; border-bottom:5px solid #00a1e9;}
+.games-feature-inner > p{overflow:hidden; font-size:22px; line-height:45px; color:#fff; letter-spacing:-0.5px;}
+.games-feature-inner > p span{float:left; line-height:45px; margin-right:5px;}
+.games-feature-inner > p span i{line-height:45px; vertical-align:middle; color:#00a1e9;}
+.games-feature-list{display:table; text-align:left; padding-top:100px; padding-bottom:50px;}
+.games-feature-list > li{display:table-cell; vertical-align:top; width:50%;}
+.games-feature-list-con{width:100%; margin-bottom:50px;}
+.games-feature-list-con > h4{font-size:23px; line-height:30px; color:#333; font-weight:600; letter-spacing:-0.5px; margin-bottom:10px;}
+.games-feature-list-con > p{overflow:hidden; font-size:16px; line-height:35px; color:#666; letter-spacing:-1px;}
+.games-feature-list-con > p span{float:left; line-height:35px; margin-right:5px;}
+.games-feature-list-con > p span i{vertical-align:middle; line-height:35px; color:#aaa;}
+.games-main-box{width:100%; height:733px; background:url(../images/content/games_img02.jpg) no-repeat center top;}
+
+
+
+/* small devices (phones, less than 767px) */
+@media all and (max-width: 767px) {
+	.games-info-box{display:block; width:100%; margin-bottom:80px;text-shadow:2px 2px 7px rgba(0,0,0,0.1)}
+	.games-left-info-box, .games-right-info-box{display:block; vertical-align:top; width:100%; text-align:left; font-size:1.8em; line-height:1.9em; word-break:keep-all;}
+	.games-left-info-box > img {width:100%;}
+	.games-left-info-box > h2{font-size:30px; line-height:46px; color:#333; letter-spacing:-0.5px; font-weight:400; margin-bottom:15px;}
+	.games-left-info-box > h3{font-size:26px; line-height:30px; color:#333; letter-spacing:-0.5px; font-weight:400;}
+	.games-left-info-box > h2 span{color:#00a1e9;}
+	.games-left-info-box > p{font-size:2.0em; line-height:3.4em; color:#333; font-weight:300; letter-spacing:-0.5px;}
+	.games-left-info-box > p span{color:#00a1e9;}
+	.games-video-box{position:relative; width:550px; padding-top:310px; }
+	.games-video-box iframe, .games-video-box object, .games-video-box embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+	.games-feature-box{width:100%; height:500px; background:url(../images/content/games_img01.jpg) no-repeat center top; text-align:left;text-shadow:2px 2px 7px rgba(0,0,0,0.4)}
+	.games-feature-inner{padding-top:90px;}
+	.games-feature-inner > h3{font-size:36px; line-height:50px; color:#fff; font-weight:400; letter-spacing:-0.5px; margin-bottom:30px;}
+	.games-feature-inner > h3 strong{font-weight:600; border-bottom:5px solid #00a1e9;}
+	.games-feature-inner > p{overflow:hidden; font-size:22px; line-height:45px; color:#fff; letter-spacing:-0.5px;}
+	.games-feature-inner > p span{float:left; line-height:45px; margin-right:5px;}
+	.games-feature-inner > p span i{line-height:45px; vertical-align:middle; color:#00a1e9;}
+	.games-feature-list{display:table; text-align:left; padding-top:100px; padding-bottom:50px;}
+	.games-feature-list > li{display:block; vertical-align:top; width:50%;}
+	.games-feature-list-con{width:100%; margin-bottom:50px;}
+	.games-feature-list-con > h4{font-size:23px; line-height:30px; color:#333; font-weight:600; letter-spacing:-0.5px; margin-bottom:10px;}
+	.games-feature-list-con > p{overflow:hidden; font-size:16px; line-height:35px; color:#666; letter-spacing:-1px;}
+	.games-feature-list-con > p span{float:left; line-height:35px; margin-right:5px;}
+	.games-feature-list-con > p span i{vertical-align:middle; line-height:35px; color:#aaa;}
+	.games-main-box{width:100%; height:733px; background:url(../images/content/games_img02.jpg) no-repeat center top;}
+	
+	.recruit-sequence-box > img{width:100%;}
+	.recruit-sequence-box > a > img{width: 40%;}
+}

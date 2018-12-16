@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <title>테스트1</title>
+     <meta name="Title" content="SJ E&M">
+     <meta name="Subject" content="SJ E&M">
+     <meta name="Author" content="SJ E&M">
+     <meta name="Keywords" content="SJ E&M,HIT">
+     <meta name="Description" content="SJ E&M은 모바일플랫폼과 게임을 서비스하는 플랫폼회사입니다.">
+     <meta name="Robots" content="INDEX,FOLLOW">
+     <meta property="og:type" content="website">
+     <meta property="og:title" content="SJ E&M">
+     <meta property="og:description" content="SJ E&M은 모바일플랫폼과 게임을 서비스하는 플랫폼회사입니다.">
+     <meta property="og:image" content="http://www.sj-enm.com/images/logo.png">
+     <meta property="og:url" content="http://www.sj-enm.com/kr/">
+     <meta name="twitter:card" content="summary">
+     <meta name="twitter:title" content="SJ E&M">
+     <meta name="twitter:description" content="SJ E&M은 모바일플랫폼과 게임을 서비스하는 플랫폼회사입니다.">
+     <meta name="twitter:image" content="../images/logo.png">
+     <meta name="twitter:domain" content="http://www.sj-enm.com/kr/">
+     <meta name="google-site-verification" content="구글 인증">
+     <meta name="naver-site-verification" content="">
+     <!-- meta name="viewport" content="width=1100" -->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=0, target-densitydpi=medium-dpi" />
+
+     <!-- 모바일사이트, 반응형사이트 제작시 사용 -->
+     <link rel="stylesheet" href="../css/reset.css">
+     <link rel="stylesheet" href="../css/common.css">
+     <link rel="stylesheet" href="../css/editor.css">
+     <link rel="stylesheet" href="../css/layout.css">
+     <link rel="stylesheet" href="../css/content.css">
+     <link rel="stylesheet" href="../css/board.css"><!-- 게시판관련 제작시 사용 -->
+
+     <!--[if lt IE 9]>
+	<![endif]-->
+
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+     <script>window.jQuery || document.write('<script src="..js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+     <script src="../js/vendor/jquery.easing.1.3.js"></script>
+     <script src="../js/vendor/jquery.scrollTo.min.js"></script>
+     <script src="../js/common.js"></script>
+     <script src="../js/layer_popup.js"></script>
+
+     <!-- 아이콘폰트 -->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!-- 메인비주얼 플러그인 -->
+     <link rel="stylesheet" type="text/css" href="../css/plugin/slick.css">
+     <script src="../js/plugin/slick.js"></script>
+
+     <style>
+          /* css */
+	.recruit-detail-box dl dd > p span{font-size:18px;}
+	.sub-page-loc.page-prev > p a img{position:absolute; /*top:-23px; left:55px;*/top:-73px; left:105px;}
+	.sub-page-loc.page-prev > p a img.on{
+		top:-23px; left:55px;
+		-moz-transition:all 0.7s, opacity 0.5s;
+		-ms-transition:all 0.7s, opacity 0.5s;
+		-webkit-transition:all 0.7s, opacity 0.5s;
+		-o-transition:all 0.7s, opacity 0.5s;
+		transition:all 0.7s, opacity 0.5s;
+	}
+	.sub-page-loc.page-next_guide > p a img{position:absolute; /*bottom:20px; right:38px;*/top:24px; right:-50px;}
+	.sub-page-loc.page-next_guide > p a img.on{top:24px; right:0px;
+		-moz-transition:all 0.7s, opacity 0.5s;
+		-ms-transition:all 0.7s, opacity 0.5s;
+		-webkit-transition:all 0.7s, opacity 0.5s;
+		-o-transition:all 0.7s, opacity 0.5s;
+		transition:all 0.7s, opacity 0.5s;
+	}
+	@media all and (max-width:1500px){
+		.sub-page-loc.page-prev > p a img{top:-83px; left:106px;}
+		.sub-page-loc.page-prev > p a img.on{top:-33px; left:56px;}
+		.sub-page-loc.page-next > p a img{width:260px; top:-25px; right:-55px;}
+		.sub-page-loc.page-next > p a img.on{top:-25px; right:-5px;}
+	}
+</style>
+     <script>
+          jQuery(function ($) {
+               if ($(".sidebar-list").length > 0) {
+                    $(window).scroll(function () {
+                         var scroll_Top = $(window).scrollTop();
+                         var startTop = $("#infoContainer").offset().top - 95;
+
+                         if (scroll_Top > startTop) {
+                              $(".sidebar-box").addClass("fixed");
+                         } else {
+                              $(".sidebar-box").removeClass("fixed");
+                         }
+
+
+                         var menuCount = $(".sidebar-list li").size();
+                         var nav = new Array();
+                         for (var i = 0; i < menuCount; i++) {
+                              nav[i] = "nav" + i;
+                              nav[i] = $($(".sidebar-list li").eq(i).find("a").attr("href")).offset().top - 95;
+                         }
+
+                         $(".sidebar-list li").each(function (idx) {
+                              if (scroll_Top >= nav[idx]) {
+                                   $('.sidebar-list li').removeClass('on');
+                                   $('.sidebar-list li').eq(idx).addClass('on');
+                              };
+                         });
+                    });
+                    $(".sidebar-list li a").click(function () {
+                         var goDiv = $($(this).attr("href")).offset().top - 90;
+                         $("html, body").animate({ scrollTop: goDiv }, 300, "swing");
+
+                         return false;
+                    });
+               }
+          });
+     </script>
+     <script>
+          $(function () {
+               dep1 = 04,
+                    dep2 = 01;
+
+               // sub2_num 변수가 있을때 ( 3차메뉴 )
+               dep3 = "";
+               if (dep3) {
+                    $(".snb > li").eq(dep2 - 1).find(".gnb-3dep").show().children("li").eq(dep3 - 1).addClass("on");
+               }
+
+               if (dep1 > 0 && dep2 > 0) {
+                    $(".sub-visual-img").addClass("on");
+                    //$("#footer").hide();
+                     //$("#footer").css('background-color', '#f4f4f4');
+                    //$(".sub-page-loc > p a img").addClass("on");
+               }
+               if (dep1 == 1) {
+                    $(".sidebar-list").addClass("style-1");
+                    $(".snb").remove();
+               }
+               if (dep1 == 2) {
+                    //$(".sidebar-box").remove();
+                    //$(".snb").addClass("style-2");
+					$(".sidebar-list").addClass("style-2");
+                    $(".snb").remove();
+               }
+               if (dep1 == 3) {
+                    //$(".sidebar-box").remove();
+                    //$(".snb").addClass("style-2");
+					$(".sidebar-list").addClass("style-2");
+                    $(".snb").remove();
+               }
+               if (dep1 == 4) {
+                    $(".sidebar-list").addClass("style-2");
+                    $(".snb").remove();
+               }
+          })
+     </script>
+     <script type="text/javascript" src="../js/nav.js"></script>
+     <script type="text/javascript" src="../js/sub.js"></script>
+     <script type="text/javascript">
+          $(window).load(function () {
+               dep1 = 04,
+                    dep2 = 01;
+
+               if (dep1 > 0 && dep2 > 0) {
+                    $(".sub-page-loc > p a img").addClass("on");
+               }
+          })
+     </script>
+     <script>
+          $(document).ready(function () {
+
+               $("#en_page").on('click', function () {
+                    alert('Comming Soon');
+               });
+          });
+     </script>
+</head>
+
+<body>
+     <!-- accessibility -->
+     <div class="cm-accessibility">
+          <a href="#container">본문바로가기</a>
+     </div>
+     <!-- //accessibility -->
+
+     <!-- code -->
+     <div id="wrap">
+          <!-- header -->
+          <header id="header">
+               <div id="headerInner" class="clearfix">
+                    <h1 class="logo"><a href="./index.html"><img src="../images/common/logo.png" alt="SJ E&M" /></a></h1>
+                    <nav id="gnb">
+                         <ul class="clearfix">
+                              <li class="gnb1"><a href="./info.html">기업소개</a></li>
+                              <li class="gnb1"><a href="./game_service1.html">서비스</a></li>
+                              <li class="gnb1"><a href="./recruiting.html">채용정보</a></li>
+                              <li class="gnb1"><a href="./proposal_guide.html">제휴문의</a></li>
+                         </ul>
+                         <div class="nav-on-icon">
+                              <!-- 움직이는 바 -->
+                              <span></span>
+                         </div>
+                    </nav>
+                    <ul class="language-box clearfix">
+                         <li class="select"><a href="./index.html">KR</a></li>
+                         <li class="split"><span>&#124;</span></li>
+                         <li><a href="javascript:void(0)" id="en_page">EN</a></li>
+
+                    </ul>
+					<nav id="gnb_mobile">
+						<ul class="clearfix">
+							<li class="gnb1"><a href="./info.html">기업소개</a></li>
+							<li class="gnb1"><a href="./game_service1.html">서비스</a></li>
+							<li class="gnb1"><a href="./recruiting.html">채용정보</a></li>
+							<li class="gnb1"><a href="./proposal_guide.html">제휴문의</a></li>
+						</ul>
+					</nav>
+               </div>
+          </header>
+          <!-- //header -->
+          <!-- container -->
+          <div id="container">
+               <!-- visual -->
+               <section id="visual">
+                    <p class="sub-visual-img">
+                         <img src="../images/data_designImages/banner_guide.png" alt="" />
+                    </p>
+                    <div class="sub-page-loc page-prev">
+                         <!-- <p>
+                              <a href="">
+                                   <img id="subPrevImg" src="" alt="subPrevImg">
+                                   <em class="font-poppin"></em>
+                              </a>
+                         </p> -->
+                    </div>
+                    <div class="sub-page-loc page-next_guide">
+                         <!-- <p>
+                              <a href="">
+                                   <img id="subNextImg" src="" alt="subNextImg">
+                                   <em class="font-poppin"></em>
+                              </a>
+                         </p> -->
+                    </div>
+                    <div class="sub-visual-txt">
+                         <div class="braket"><span></span></div>
+                         <h2>제휴문의</h2>
+                         <h3 class="font-poppin">PROPOSAL GUIDE INTRODUCTION</h3>
+                         <p class="font-poppin">
+                              <span>Home</span>
+                              <span>&gt;</span>
+                              <span class="point">제휴문의</span>
+                         </p>
+                    </div>
+                    <aside id="sideBar">
+                         <div class="sidebar-box">
+                              <ul class="sidebar-list clearfix">
+                                   <li class="on"><a href="#recruitCon01">제휴절차</a></li>
+                                   <!-- <li><a href="#recruitCon02">제휴제안</a></li> -->
+                                   <li><a href="#recruitCon03">제휴제안</a></li>
+                                   <!-- <li><a href="#recruitCon04">복리후생</a></li> -->
+                              </ul>
+                         </div>
+                         <ul class="snb">
+                              <li class="on"><a href="#recruitCon01">제휴절차</a></li>
+                              <!-- <li><a href="#recruitCon02">제휴제안</a></li> -->
+                              <li><a href="#recruitCon03">제휴제안</a></li>
+                              <!-- <li><a href="#recruitCon04">복리후생</a></li> -->
+                         </ul>
+                    </aside>
+               </section>
+               <!-- //visual -->
+               <!-- middleArea -->
+               <div id="middleArea">
+                    <!-- content -->
+                    <section id="content">
+                         <!-- 컨텐츠 내용 -->
+                         <article id="infoContainer" class="area">
+                              <div id="recruitCon01" class="sub-content">
+                                   <h3 class="sub-con-tit"><span>제휴절차</span></h3>
+                                   <span style="font-size:16px">강력한 브랜드 이미지를 SJ E&M과 함께 극대화 하세요.</span>
+                                   <div class="recruit-sequence-box">
+                                        <img src="../images/proposal/guide.png">
+                                   </div>
+                              </div>
+                              <div id="recruitCon02" class="sub-content">
+                                   <div id="recruitCon03" class="sub-content">
+                                        <h3 class="sub-con-tit"><span>제휴제안</span></h3>
+                                        <div class="job-info-tbl" style="font-size:17px">
+                                             <span>1. 온라인, 모바일게임 퍼블리싱 및 채널링 제안</span><br /><br />
+                                             <span>2. APP컨텐츠 퍼블리싱 제안</span><br /><br />
+                                             <span>3. 해외컨텐츠(게임,APP등) 퍼블리싱 제안</span><br /><br />
+                                             <span>4. 웹 컨텐츠(웹툰,음악,VOD등) 제휴서비스 제안</span><br /><br />
+                                             <span>5. 그외 기타 모든 제휴제안 문의</span><br /><br />
+                                        </div><br />
+                                        전화 문의 전 이메일로 제휴에 대한 상세한 내용을 먼저 보내주시면 감사하겠습니다.
+                                   </div>
+                                   <div id="recruitCon01" class="sub-content">
+                                        <div class="recruit-sequence-box" style="text-align: center">
+                                             <a href="mailto:ryan@sj-enm.com"><img src="../images/proposal/email_img01.jpg"></a>&nbsp;
+                                             <a href="tel:02-6233-8236"><img src="../images/proposal/number_img01.jpg"></a>
+                                        </div>
+                                   </div>
+                                   <div id="recruitCon04" class="sub-content last">
+                                        <script language="javascript">
+
+                                             function searchCheck(box) {
+                                                  if (box.checked == false) {
+                                                       bbs_search_form.search_item.value = eval(bbs_search_form.search_item.value) - eval(box.value);
+                                                  } else {
+                                                       bbs_search_form.search_item.value = eval(bbs_search_form.search_item.value) + eval(box.value);
+                                                  }
+                                             }
+                                             function search() {
+                                                  if (bbs_search_form.selected == false) {
+                                                       alert("검색을 체크해 주십시오.");
+                                                  } else if (bbs_search_form.search_order.value == "") {
+                                                       alert("검색할 내용을 입력해 주십시오.");
+                                                       bbs_search_form.search_order.focus();
+                                                  } else {
+                                                       bbs_search_form.submit();
+                                                  }
+                                             }
+
+                                             var rollFlag = 0;
+                                             function roll_up(img_num) {
+                                             }
+
+                                             function roll_down(img_num) {
+                                             }
+
+                                             function txt_roll(str) {
+                                                  sub_num = str.substring(str.length - 2);
+                                                  sub_str = str.substring(0, str.length - 2);
+
+                                                  if (document.all[str].style.display == "") {
+                                                       document.all[str].style.display = "none";
+                                                       roll_up(sub_num);
+                                                       rollFlag = 0;
+                                                       return;
+                                                  }
+                                                  else {
+                                                       if (rollFlag != 0) {
+                                                            document.all[sub_str + rollFlag].style.display = "none";
+                                                            roll_up(rollFlag);
+                                                            document.all[str].style.display = "";
+                                                            roll_down(sub_num);
+                                                       }
+
+                                                       document.all[str].style.display = "";
+                                                       roll_down(sub_num);
+                                                       rollFlag = sub_num;
+                                                  }
+
+                                             }
+
+
+                                             function popup(arg, text) {
+
+                                                  layer = eval("layer" + text);
+
+                                                  if (arg == 'on') {
+                                                       layer.style.visibility = 'visible';
+                                                       layer.style.pixelTop = event.clientY + 15;
+                                                       layer.style.pixelLeft = event.clientX + 10;
+                                                  }
+                                                  else {
+                                                       layer.style.visibility = 'hidden';
+                                                  }
+                                             }
+
+                                             function NewOpen(img, text1, text2) {
+                                                  myheight = text2;
+                                                  mywidth = text1;
+                                                  mysize = "width=" + mywidth + ",height=" + myheight;
+                                                  myimage = window.open("", "", mysize);
+                                                  mysize = " width=" + mywidth + " height=" + myheight;
+                                                  myimage.document.write("<html><head><title>이미지크게보기</title></head>");
+                                                  myimage.document.write("<body topmargin=0 leftmargin=0>");
+                                                  myimage.document.write("<img src=" + img + mysize + " onclick='self.close()' style='cursor:hand;'>");
+                                             }
+                                        </script>
+                         </article>
+                         <!-- //컨텐츠 내용 -->
+                    </section>
+                    <!-- //content -->
+               </div>
+          </div>
+          <!-- //container -->
+          <!-- footer -->
+          <footer id="footer">
+				<div id="footerInner" class="clearfix area">
+					<h2 class="footer-logo fl"></h2>
+					<div class="footer-info fr">
+						<p style="margin-right:200px">
+								<v style="margin-right: 15px"><img src="../images/common/logo.png" alt='LOGO' /></v>
+							<span style="text-align: left"><i class="material-icons"></i>(주)대표이사 김선수 ( 사업자 등록번호: 357-87-01094 )<br>
+								주소 : 서울특별시 성동구 성수일로8길5 서울숲 SKVTOWER 1806호<br>
+									Tel : 02-6233-8236&nbsp;Fax : 02-6233-8235<br>
+									copyright&#169;SJ E&amp;M All right reserved.</span>
+						</p>
+					</div>
+				</div>
+			</footer>
+			<!-- 모바일 footer -->
+			<footer id="footer_m">
+				<div id="footerInner" class="clearfix area">
+					<h2 class="footer-logo fl"></h2>
+					<div class="footer-info">
+						<p>
+							<v style="margin-right: 15px;"><img src="../images/common/bk_logo.png" alt='LOGO' /></v>
+							<span style="text-align: left"><i class="material-icons"></i>(주)대표이사 김선수 ( 사업자 등록번호: 357-87-01094 )<br>
+								주소 : 서울특별시 성동구 성수일로8길5 서울숲 SKVTOWER 1806호<br>
+								Tel : 02-6233-8236&nbsp;Fax : 02-6233-8235<br>
+								copyright&#169;SJ E&amp;M All right reserved.</span>
+						</p>
+					</div>
+				</div>
+		   </footer>
+
+
+     </div>
+     <!-- //code -->
+</body>
+
+</html>

@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>(주) SJ E&M</title>
+	<meta name="Title" content="SJ E&M">
+	<meta name="Subject" content="SJ E&M">
+	<meta name="Author" content="SJ E&M">
+	<meta name="Keywords" content="SJ E&M,HIT">
+	<meta name="Description" content="SJ E&M은 모바일플랫폼과 게임을 서비스하는 플랫폼회사입니다.">
+	<meta name="Robots" content="INDEX,FOLLOW">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="SJ E&M">
+	<meta property="og:description" content="SJ E&M은 모바일플랫폼과 게임을 서비스하는 플랫폼회사입니다.">
+	<meta property="og:image" content="http://www.sj-enm.com/images/logo.png">
+	<meta property="og:url" content="http://www.sj-enm.com/kr/">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="SJ E&M">
+	<meta name="twitter:description" content="SJ E&M은 모바일플랫폼과 게임을 서비스하는 플랫폼회사입니다.">
+	<meta name="twitter:image" content="../images/logo.png">
+	<meta name="twitter:domain" content="http://www.sj-enm.com/kr/">
+	<meta name="google-site-verification" content="구글 인증">
+	<meta name="naver-site-verification" content="">
+	<!--<meta name="viewport" content="width=1100">-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=0, target-densitydpi=medium-dpi" />
+	<!-- 모바일사이트, 반응형사이트 제작시 사용 -->
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/editor.css">
+	<link rel="stylesheet" href="../css/layout.css">
+	<link rel="stylesheet" href="../css/content.css">
+	<link rel="stylesheet" href="../css/board.css"><!-- 게시판관련 제작시 사용 -->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+	<script src="../js/vendor/jquery.easing.1.3.js"></script>
+	<script src="../js/vendor/jquery.scrollTo.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/layer_popup.js"></script>
+
+	<!-- 아이콘폰트 -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+	<!-- 메인비주얼 플러그인 -->
+	<link rel="stylesheet" type="text/css" href="../css/plugin/slick.css">
+	<script src="../js/plugin/slick.js"></script>
+
+	<link rel="stylesheet" href="../css/main.css" />
+	<!-- <link rel="stylesheet" href="../css/main.css" /> -->
+	<script>
+		$(function () {
+			dep1 = 0,
+				dep2 = 0;
+		})
+	</script>
+	<!-- 내비 메인 -->
+	<script type="text/javascript" src="../js/nav.js"></script>
+	<script type="text/javascript" src="../js/main.js"></script>
+	<script>
+		$(window).on('mousemove', function (e) {
+			var w = $(window).width();
+			var h = $(window).height();
+			var offsetX = 0.3 - e.pageX / w;
+			var offsetY = 1.5 - e.pageY / h;
+
+			$(".parallax").each(function (i, el) {
+				var offset = parseInt($(el).data('offset'));
+				var translate = "translate3d(" + Math.round(offsetX * offset) + "px," + Math.round(0 * offset) + "px, 0px)";
+
+				$(el).css({
+					'-webkit-transform': translate,
+					'transform': translate,
+					'moz-transform': translate
+				});
+			});
+		});
+	</script>
+	<script>
+		$(document).ready(function () {
+
+			$("#en_page").on('click', function () {
+				alert('Comming Soon');
+			});
+		});
+	</script>
+	<style type="text/css">
+		@media all and (max-width:1220px) {}
+	</style>
+</head>
+
+<body>
+	<div class="cm-accessibility">
+		<a href="#mainContainer">본문바로가기</a>
+	</div>
+	<!-- code -->
+	<div id="wrap" class="main">
+		<!-- header -->
+		<header id="header">
+			<div id="headerInner" class="clearfix">
+				<h1 class="logo"><a href="./index.html"><img src="../images/common/logo.png" alt="nplay# 메인로고" /></a></h1>
+				<nav id="gnb">
+					<ul class="clearfix">
+						<li class="gnb1"><a href="./info.html">기업소개</a></li>
+						<li class="gnb1"><a href="./game_service1.html">서비스</a></li>
+						<li class="gnb1"><a href="./recruiting.html">채용정보</a></li>
+						<li class="gnb1"><a href="./proposal_guide.html">제휴문의</a></li>
+					</ul>
+					<div class="nav-on-icon">
+						<!-- 움직이는 바 -->
+						<span></span>
+					</div>
+				</nav>
+				<ul class="language-box clearfix">
+					<li class="select"><a href="./index.html">KR</a></li>
+					<li class="split"><span>&#124;</span></li>
+					<li><a href="javascript:void(0)" id="en_page">EN</a></li>
+				</ul>
+				<nav id="gnb_mobile">
+					<ul class="clearfix">
+						<li class="gnb1"><a href="./info.html">기업소개</a></li>
+						<li class="gnb1"><a href="./game_service1.html">서비스</a></li>
+						<li class="gnb1"><a href="./recruiting.html">채용정보</a></li>
+						<li class="gnb1"><a href="./proposal_guide.html">제휴문의</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<!-- //header -->
+		<!-- container -->
+		<div id="mainContainer">
+			<!-- visual -->
+			<section id="mainVisual">
+				<ul class="visual-img" style="width: 300%;">
+
+
+					<li class="visual03" style="width: 33.3333%; display: none;">
+						<div class="visual-bac-cover number3" style="background:url(../images/main/main_banner.png) no-repeat center top; background-size:cover;">
+							<span><img src="../images/main/main_banner.png" alt="" style="display: block;"></span></div>
+					</li>
+
+
+					<li class="visual02" style="width: 33.3333%; display: list-item; opacity: 0.967084;">
+						<div class="visual-bac-cover number2" style="background:url(../images/main/main_banner.png) no-repeat center top; background-size:cover;"><span><img
+								 src="../images/main/main_banner.png" alt="" style="display: block;"></span></div>
+					</li>
+
+
+					<li class="visual01" style="width: 33.3333%; display: none;">
+						<div class="visual-bac-cover number1" style="background:url(../images/main/main_banner.png) no-repeat center top; background-size:cover;"><span><img
+								 src="../images/main/main_banner.png" alt="" style="display: block;"></span></div>
+					</li>
+				</ul>
+				<ul class="visual-bx area">
+					<li>
+							<div class="braket_main"><span></span></div>
+						<h2>사람과 컨텐츠를 이어주는</h2>
+						<p style="transition-delay:0.3s">CONNECT&nbsp;PEOPLE&nbsp;AND&nbsp;CONTENT</p>
+					</li>
+
+					<li>
+							<div class="braket_main"><span></span></div>
+						<h2>사람과 컨텐츠를 이어주는</h2>
+						<p style="transition-delay:0.3s">CONNECT&nbsp;PEOPLE&nbsp;AND&nbsp;CONTENT</p>
+					</li>
+
+					<li>
+							<div class="braket_main"><span></span></div>
+						<h2>사람과 컨텐츠를 이어주는</h2>
+						<p style="transition-delay:0.3s">CONNECT&nbsp;PEOPLE&nbsp;AND&nbsp;CONTENT</p>
+					</li>
+
+				</ul>
+				<div class="visual-btn prev">
+					<p class="trans300">
+						<span>
+							<img id="prevImg" src="../images/main/btn_img2_1.png" alt="" class="trans300" />
+						</span>
+					</p>
+				</div>
+				<div class="visual-btn next">
+					<p class="trans300">
+						<span>
+							<img id="nextImg" src="../images/main/main_img02.png" alt="" class="trans300" />
+						</span>
+					</p> 
+				</div>
+			</section>
+			<!-- //visual -->
+			<!-- content -->
+			<section id="mainContent">
+				<article id="mainIntro" class="area">
+					<p>
+						<h2 class="main-tit"><img src="../images/main/triangle.png"><br />SJ E&M</h2><br>
+						<p><strong>'사람과 사람의 관계'</strong>와<strong>'상호연결'</strong>과 같은<br><br>
+							<strong>소셜(social)</strong>에 가치를 두며 컨텐츠를 통해 많은 이들에게<br><br>
+							<strong>즐거움과 가치를 창조해 가는 것</strong>이 저희 비전입니다.</p>
+				</article>
+				<article id="mainNews" class="area">
+					<h2 class="main-tit"><img src="../images/main/triangle.png"><br />News</h2>
+					<div class="news-container gallery-list-con02 clearfix">
+						<ul class="gallery-list clearfix" style="text-align: center">
+							<li class="mar0 fl">
+								<a href="http://www.sj-enm.com" target="_blank">
+									<div class="list-info-con">
+										<strong class="list-tit">empty</strong>
+										<p>empty</p>
+										<span class="list-day">2000-00-00</span>
+									</div>
+								</a>
+							</li>
+							
+							<li class="fr">
+								<a href="http://www.sj-enm.com" target="_blank">
+									<div class="list-info-con">
+										<strong class="list-tit">empty</strong>
+										<p>empty</p>
+										<span class="list-day">2000-00-00</span>
+									</div>
+								</a>
+							</li>
+							
+							<li class="mar0 fl">
+								<a href="http://www.sj-enm.com" target="_blank">
+									<div class="list-info-con">
+										<strong class="list-tit">empty</strong>
+										<p>empty</p>
+										<span class="list-day">2000-00-00</span>
+									</div>
+								</a>
+							</li>
+							
+							<li class="fr">
+									<a href="http://www.sj-enm.com" target="_blank">
+									<div class="list-info-con">
+										<strong class="list-tit">empty</strong>
+										<p>empty</p>
+										<span class="list-day">2000-00-00</span>
+									</div>
+								</a>
+							</li>
+							
+						</ul>
+					</div>
+				</article>
+				<article id="mainRecruit" class="area">
+					<h2 class="main-tit"><img src="../images/main/triangle.png"><br />Partnership</h2>
+					<ul class="recruit-list">
+						<li onclick="location.href='./proposal_guide.html'" style='cursor:pointer'>
+							<div class="recruit-img-thum"><img src="../images/main/main_01.png" alt="제휴절차" /></div>
+							<strong>제휴제안</strong>
+							<p>SJ E&amp;M과 성장하실 파트너사<br />절차를 자세히 설명 해 드립니다.</p>
+						</li>
+						<li onclick="location.href='./game_service1.html'" style='cursor:pointer'>
+							<div class="recruit-img-thum"><img src="../images/main/main_02.png" alt="제휴제안"/></div>
+							<strong>서비스</strong>
+							<p>SJ &amp;M은<br />항상 열려있습니다.</p>
+						</li>
+						<li onclick="location.href='./info.html#infoCon04'" style='cursor:pointer'>
+							<div class="recruit-img-thum"><img src="../images/main/main_03.png" alt="오시는길"/></div>
+							<strong>오시는길</strong>
+							<p>소중한 사람들의<br />공간으로 오시는 길 입니다.</p>
+						</li>
+					</ul>
+				</article>
+			</section>
+			<!-- //content -->
+		</div>
+		<!-- //container -->
+		<!-- footer -->
+		<footer id="footer">
+				<div id="footerInner" class="clearfix area">
+					<h2 class="footer-logo fl"></h2>
+					<div class="footer-info fr">
+						<p style="margin-right:200px">
+								<v style="margin-right: 15px"><img src="../images/common/logo.png" alt='LOGO' /></v>
+							<span style="text-align: left"><i class="material-icons"></i>(주)대표이사 김선수 ( 사업자 등록번호: 357-87-01094 )<br>
+								주소 : 서울특별시 성동구 성수일로8길5 서울숲 SKVTOWER 1806호<br>
+									Tel : 02-6233-8236&nbsp;Fax : 02-6233-8235<br>
+									copyright&#169;SJ E&amp;M All right reserved.</span>
+						</p>
+					</div>
+				</div>
+			</footer>
+			<!-- 모바일 footer -->
+			<footer id="footer_m">
+				<div id="footerInner" class="clearfix area">
+					<h2 class="footer-logo fl"></h2>
+					<div class="footer-info">
+						<p>
+							<v style="margin-right: 15px;"><img src="../images/common/bk_logo.png" alt='LOGO' /></v>
+							<span style="text-align: left"><i class="material-icons"></i>(주)대표이사 김선수 ( 사업자 등록번호: 357-87-01094 )<br>
+								주소 : 서울특별시 성동구 성수일로8길5 서울숲 SKVTOWER 1806호<br>
+								Tel : 02-6233-8236&nbsp;Fax : 02-6233-8235<br>
+								copyright&#169;SJ E&amp;M All right reserved.</span>
+						</p>
+					</div>
+				</div>
+		   </footer>
+	</div>
+</body>
+
+</html>

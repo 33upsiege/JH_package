@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>테스트1</title>
+	<!-- 파비콘 사용시 주석해제 -->
+	<meta name="Title" content="SJ E&M">
+	<meta name="Subject" content="SJ E&M">
+	<meta name="Author" content="SJ E&M">
+	<meta name="Keywords" content="SJ E&M,HIT">
+	<meta name="Description" content="SJ E&M은 모바일플랫폼과 게임을 서비스하는 플랫폼회사입니다.">
+	<meta name="Robots" content="INDEX,FOLLOW">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="SJ E&M">
+	<meta property="og:description" content="SJ E&M은 모바일플랫폼과 게임을 서비스하는 플랫폼회사입니다.">
+	<meta property="og:image" content="http://www.sj-enm.com/images/logo.png">
+	<meta property="og:url" content="http://www.sj-enm.com/kr/">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="SJ E&M">
+	<meta name="twitter:description" content="SJ E&M은 모바일플랫폼과 게임을 서비스하는 플랫폼회사입니다.">
+	<meta name="twitter:image" content="../images/logo.png">
+	<meta name="twitter:domain" content="http://www.sj-enm.com/kr/">
+	<meta name="google-site-verification" content="구글 인증">
+	<meta name="naver-site-verification" content="">
+	<!-- <meta name="viewport" content="width=1100"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=0, target-densitydpi=medium-dpi" />
+	<!-- 모바일사이트, 반응형사이트 제작시 사용 -->
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/editor.css">
+	<link rel="stylesheet" href="../css/layout.css">
+	<link rel="stylesheet" href="../css/content.css">
+	<link rel="stylesheet" href="../css/board.css"><!-- 게시판관련 제작시 사용 -->
+	<!-- 회원관련 폼 제작시 사용 -->
+
+	<!--[if lt IE 9]>
+	<![endif]-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+	<script src="../js/vendor/jquery.easing.1.3.js"></script>
+	<script src="../js/vendor/jquery.scrollTo.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/layer_popup.js"></script>
+
+	<!-- 아이콘폰트 -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- 메인비주얼 플러그인 -->
+	<link rel="stylesheet" type="text/css" href="../css/plugin/slick.css">
+	<script src="../js/plugin/slick.js"></script>
+
+	<style>
+		/* css */
+#gameContainer{text-align:center;}
+.sub-page-loc.page-prev > p a img{position:absolute; /*top:-5px; left:0;*/top:-55px; left:-30px;}
+.sub-page-loc.page-prev > p a img.on{top:-5px; left:-80px; opacity:1.0;filter:Alpha(opacity=100);
+	-moz-transition:all 0.7s, opacity 0.5s;
+	-ms-transition:all 0.7s, opacity 0.5s;
+	-webkit-transition:all 0.7s, opacity 0.5s;
+	-o-transition:all 0.7s, opacity 0.5s;
+	transition:all 0.7s, opacity 0.5s;
+}
+
+.sub-page-loc.page-next > p a img{position:absolute; /*top:91px; right:-25px;*/top:91px; right:-75px;}
+.sub-page-loc.page-next > p a img.on{top:91px; right:-25px; opacity:1.0;filter:Alpha(opacity=100);
+	-moz-transition:all 0.7s, opacity 0.5s;
+	-ms-transition:all 0.7s, opacity 0.5s;
+	-webkit-transition:all 0.7s, opacity 0.5s;
+	-o-transition:all 0.7s, opacity 0.5s;
+	transition:all 0.7s, opacity 0.5s;
+}
+@media all and (max-width:1500px){
+	.sub-page-loc.page-prev > p a img{top:-76px;}
+	.sub-page-loc.page-prev > p a img.on{top:-26px;}
+	.sub-page-loc.page-next > p a img{top:54px;}
+	.sub-page-loc.page-next > p a img.on{top:54px;}
+}
+</style>
+	<script>
+		/* js */
+		$(document).ready(function () {
+			jQuery(function ($) {
+				if ($(".sidebar-list").length > 0) {
+					$(window).scroll(function () {
+						var scroll_Top = $(window).scrollTop();
+						var startTop = $("#gameContainer").offset().top - 95;
+
+						if (scroll_Top > startTop) {
+							$(".sidebar-box").addClass("fixed");
+						} else {
+							$(".sidebar-box").removeClass("fixed");
+						}
+
+
+					});
+				}
+			});
+		
+		});
+	</script>
+
+	<script>
+		$(function () {
+			dep1 = 02,
+				dep2 = 01;
+
+			// sub2_num 변수가 있을때 ( 3차메뉴 )
+			dep3 = "";
+			if (dep3) {
+				$(".snb > li").eq(dep2 - 1).find(".gnb-3dep").show().children("li").eq(dep3 - 1).addClass("on");
+			}
+
+			if (dep1 > 0 && dep2 > 0) {
+				$(".sub-visual-img").addClass("on");
+				//$("#footer").hide();
+				$("#footer").css('background-color', '#e6ebef');
+				//$(".sub-page-loc > p a img").addClass("on");
+			}
+			if (dep1 == 1) {
+				$(".sidebar-list").addClass("style-1");
+				$(".snb").remove();
+			}
+			if (dep1 == 2) {
+				//$(".sidebar-box").remove();
+				//$(".snb").addClass("style-2");
+				$(".sidebar-list").addClass("style-2");
+				$(".snb").remove();
+			}
+			if (dep1 == 3) {
+				//$(".sidebar-box").remove();
+				//$(".snb").addClass("style-2");
+				$(".sidebar-list").addClass("style-1");
+				$(".snb").remove();
+			}
+			if (dep1 == 4) {
+				$(".sidebar-list").addClass("style-1");
+				$(".snb").remove();
+			}
+		})
+	</script>
+	<script type="text/javascript" src="../js/nav.js"></script>
+	<script type="text/javascript" src="../js/sub.js"></script>
+	<script type="text/javascript">
+		$(window).load(function () {
+			dep1 = 02,
+				dep2 = 01;
+
+			if (dep1 > 0 && dep2 > 0) {
+				$(".sub-page-loc > p a img").addClass("on");
+			}
+		})
+	</script>
+	<script>
+		$(document).ready(function () {
+
+			$("#en_page").on('click', function () {
+				alert('Comming Soon');
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<!-- accessibility -->
+	<div class="cm-accessibility">
+		<a href="#container">본문바로가기</a>
+	</div>
+	<!-- //accessibility -->
+
+	<!-- code -->
+	<div id="wrap">
+		<!-- header -->
+		<header id="header">
+			<div id="headerInner" class="clearfix">
+				<h1 class="logo"><a href="./index.html"><img src="../images/common/logo.png" alt="넷게임즈" /></a></h1>
+				<nav id="gnb">
+					<ul class="clearfix">
+						<li class="gnb1"><a href="./info.html">기업소개</a></li>
+						<li class="gnb1"><a href="./game_service1.html">서비스</a></li>
+						<li class="gnb1"><a href="./recruiting.html">채용정보</a></li>
+						<li class="gnb1"><a href="./proposal_guide.html">제휴문의</a></li>
+					</ul>
+					<div class="nav-on-icon">
+							<span style="display: none; overflow: hidden; left: 44.0156px; width: 61px;"></span>
+					   </div>
+					
+				</nav>
+				<ul class="language-box clearfix">
+					<li class="select"><a href="./index.html">KR</a></li>
+					<li class="split"><span>&#124;</span></li>
+					<li><a href="javascript:void(0)" id="en_page">EN</a></li>
+				</ul>
+				<nav id="gnb_mobile">
+					<ul class="clearfix">
+						<li class="gnb1"><a href="./info.html">기업소개</a></li>
+						<li class="gnb1"><a href="./game_service1.html">서비스</a></li>
+						<li class="gnb1"><a href="./recruiting.html">채용정보</a></li>
+						<li class="gnb1"><a href="./proposal_guide.html">제휴문의</a></li>
+					</ul>
+				</nav>
+
+			</div>
+		</header>
+		<!-- //header -->
+		<!-- container -->
+		<div id="container">
+			<!-- visual -->
+			<section id="visual">
+				<p class="sub-visual-img">
+					<img src="../images/service/game_banner_bg.png" alt="게임소개 배너" />
+				</p>
+				<div class="sub-page-loc page-prev">
+					<!-- <p>
+						<a href="">
+							<img id="subPrevImg" src="" alt="subPrevImg">
+							<em class="font-poppin"></em>
+						</a>
+					</p> -->
+				</div>
+				<div class="sub-page-loc page-next_service">
+					<!-- <p>
+						<a href="">
+							<img id="subNextImg" src="" alt="subNextImg">
+							<em class="font-poppin"></em>
+						</a>
+					</p> -->
+				</div>
+				<div class="sub-visual-txt">
+					<div class="braket"><span></span></div>
+					<h2>게임소개</h2>
+					<h3 class="font-poppin">SERVICE INTRODUCTION</h3>
+					<p class="font-poppin">
+						<span>Home</span>
+						<span>&gt;</span>
+						<span>서비스</span>
+						<span>&gt;</span>
+						<span class="point">게임</span>
+					</p>
+				</div>
+				<aside id="sideBar">
+					<div class="sidebar-box">
+						<ul class="sidebar-list clearfix">
+							<li class="on"><a href="javascript:void(0)">게임</a></li>
+							<li><a href="../kr/game_service2.html">Nplay#</a></li>
+						</ul>
+					</div>
+					<ul class="snb">
+						<li class="on"><a href="javascript:void(0)">게임</a></li>
+						<li><a href="../kr/game_service2.html">Nplay#</a></li>
+					</ul>
+				</aside>
+			</section>
+			<!-- //visual -->
+			<!-- middleArea -->
+			<div id="middleArea">
+				<!-- content -->
+				<section id="content">
+					<!-- 컨텐츠 내용 -->
+					<article id="gameContainer">
+						<div class="game-info-content area">
+							<h3 class="sub-con-tit"><span>퍼즐 뽀로로(mobile)</span></h3>
+							<div class="games-info-box clearfix">
+								<div class="games-left-info-box">
+									<img src="../images/service/game_img01.png">
+								</div>
+								<div class="games-left-info-box"><br>
+									<p>
+										<h3><strong>구분:안드로이드 어플리케이션</strong></h3><br>
+										뽀로로 IP 활용 <br>
+										블록을 자유롭게 이동시키는 자유 이동방식 게임의 재미를 배가 시키는 다양한 요소
+										400개 이상의 방대한 스테이지, 친구와 스테이지 경쟁!! 소셜 연동 알파벳을 다 모으면 주변 블록까지 다 터지는 특정 이벤트 발동!
+										운을 시험해보자! 포춘쿠키 뽑기(아이템,다이아,에너지 획득 가능)<br>
+										<div style="height: 22px"></div>
+										<img src="../images/service/game_img01-1.png">
+									</p>
+								</div>
+							</div>
+							<h3 class="sub-con-tit"><span>킹즈히어로(mobile)</span></h3>
+							<div class="games-info-box clearfix">
+								<div class="games-left-info-box">
+									<img src="../images/service/game_img02.png">
+								</div>
+								<div class="games-left-info-box"><br>
+									<p>
+										<h3><strong>구분:안드로이드 어플리케이션</strong></h3><br>
+										80여가지 이상의 다양한 몬스터! 고블린,거대 드래곤,화난 오크족,
+										고귀한 엘프 등 다양한 몬스터가 스릴감 넘치는 전투 영웅의 전직과 수백 가지 스킬을 통해 자신만의 영웅을 제작 가능하며 500여 가지 이상의 장비를 수집할 수 있고
+										강화를 통한 궁극의 장비를 제작해 킹즈히어로의 모든 친구들과 경쟁하는 래더 매치, 실시간으로 즐기는 보스 레이드 등
+										<div style="height: 20px"></div>
+										<img src="../images/service/game_img02-1.png">
+									</p>
+								</div>
+							</div>
+							<h3 class="sub-con-tit"><span>Re:Play(VR)</span></h3>
+							<div class="games-info-box clearfix">
+								<div class="games-left-info-box">
+									<img src="../images/service/game_img03.png">
+								</div>
+								<div class="games-left-info-box"><br>
+									<p>
+										<h3><strong>구분:VR게임</strong></h3><br>
+										마포구 H대 상권을 기본으로 게임상 공간을 만들어 친근함을 높이고
+										아침,점심,저녁이라는 시간대를 두어 연출 효과를 극대화, 게임을 오래 즐길수록 속도감을 주어 스피디한 느낌을 연출,
+										캐릭터(3종)마다 특징을 두어 지루하지 않게 게임 플레이 가능
+										<div style="height:74px"></div>
+										<img src="../images/service/game_img03-1.png">
+									</p>
+								</div>
+							</div>
+							<h3 class="sub-con-tit"><span>Project-M(VR)</span></h3>
+							<div class="games-info-box clearfix">
+								<div class="games-left-info-box">
+									<img src="../images/service/game_img04.png">
+								</div>
+								<div class="games-left-info-box"><br>
+									<p>
+										<h3><strong>구분:체험형 VR게임</strong></h3><br>
+										기존의 1인칭 FPS게임을 HMD 기기를 활용하여 4인 네트워크 플레이를 할 수 있는 VR FPS게임, 실제 총기 모양의 컨트롤러를 사용하고 일정 공간 안에서 이동하며 직접 게임을 체험하며 
+										대구 83타워 건물을 모티브로 게임상 공간을 꾸며 공간에 거부감이 적고 친근함
+										<div style="height: 74px"></div>
+										<img src="../images/service/game_img04-1.png">
+									</p>
+								</div>
+							</div>
+						</div>
+					</article>
+					<!-- //컨텐츠 내용 -->
+				</section>
+				<!-- //content -->
+			</div>
+			<footer id="footer">
+					<div id="footerInner" class="clearfix area">
+						<h2 class="footer-logo fl"></h2>
+						<div class="footer-info fr">
+							<p style="margin-right:200px">
+									<v style="margin-right: 15px"><img src="../images/common/logo.png" alt='LOGO' /></v>
+								<!-- <span><i class="material-icons">&#xE0CD;</i>02-6233-8235</span> -->
+								<span style="text-align: left"><i class="material-icons"></i>(주)대표이사 김선수 ( 사업자 등록번호: 357-87-01094 )<br>
+									주소 : 서울특별시 성동구 성수일로8길5 서울숲 SKVTOWER 1806호<br>
+										Tel : 02-6233-8236&nbsp;Fax : 02-6233-8235<br>
+										copyright&#169;SJ E&amp;M All right reserved.</span>
+							</p>
+							<!-- <p class="copy font-poppin"></p> -->
+						</div>
+					</div>
+				</footer>
+				<!-- 모바일 footer -->
+				<footer id="footer_m">
+					<div id="footerInner" class="clearfix area">
+						<h2 class="footer-logo fl"></h2>
+						<div class="footer-info">
+							<p>
+								<v style="margin-right: 15px;"><img src="../images/common/bk_logo.png" alt='LOGO' /></v>
+								<!-- <span><i class="material-icons">&#xE0CD;</i>02-6233-8235</span> -->
+								<span style="text-align: left"><i class="material-icons"></i>(주)대표이사 김선수 ( 사업자 등록번호: 357-87-01094 )<br>
+									주소 : 서울특별시 성동구 성수일로8길5 서울숲 SKVTOWER 1806호<br>
+									Tel : 02-6233-8236&nbsp;Fax : 02-6233-8235<br>
+									copyright&#169;SJ E&amp;M All right reserved.</span>
+							</p>
+							<!-- <p class="copy font-poppin"></p> -->
+						</div>
+					</div>
+			   </footer>
+	
+
+			<!-- 모달 레이어팝업 -->
+			<article class="modal-fixed-pop-wrapper">
+				<div class="modal-fixed-pop-inner">
+					<div class="modal-loading"><span class="loading"></span></div>
+					<div class="modal-inner-box">
+						<div class="modal-inner-content">
+							<!-- ajax 내용 -->
+						</div>
+					</div>
+				</div>
+			</article> <!-- //footer -->
+		</div>
+		<!-- //code -->
+</body>
+
+</html>

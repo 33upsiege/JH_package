@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>테스트1</title>
+	<meta name="Title" content="SJ E&M">
+	<meta name="Subject" content="SJ E&M">
+	<meta name="Author" content="SJ E&M">
+	<meta name="Keywords" content="SJ E&M,HIT">
+	<meta name="Description" content="SJ E&M은 모바일플랫폼과 게임을 서비스하는 플랫폼회사입니다.">
+	<meta name="Robots" content="INDEX,FOLLOW">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="SJ E&M">
+	<meta property="og:description" content="SJ E&M은 모바일플랫폼과 게임을 서비스하는 플랫폼회사입니다.">
+	<meta property="og:image" content="http://www.sj-enm.com/images/logo.png">
+	<meta property="og:url" content="http://www.sj-enm.com/kr/">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="SJ E&M">
+	<meta name="twitter:description" content="SJ E&M은 모바일플랫폼과 게임을 서비스하는 플랫폼회사입니다.">
+	<meta name="twitter:image" content="../images/logo.png">
+	<meta name="twitter:domain" content="http://www.sj-enm.com/kr/">
+	<meta name="google-site-verification" content="구글 인증">
+	<meta name="naver-site-verification" content="">
+	<!-- <meta name="viewport" content="width=1100"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=0, target-densitydpi=medium-dpi" />
+	<!-- 모바일사이트, 반응형사이트 제작시 사용 -->
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/editor.css">
+	<link rel="stylesheet" href="../css/layout.css">
+	<link rel="stylesheet" href="../css/content.css">
+	<link rel="stylesheet" href="../css/board.css"><!-- 게시판관련 제작시 사용 -->
+	<!-- 회원관련 폼 제작시 사용 -->
+
+	<!--[if lt IE 9]>
+	<![endif]-->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+	<script src="../js/vendor/jquery.easing.1.3.js"></script>
+	<script src="../js/vendor/jquery.scrollTo.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/layer_popup.js"></script>
+
+	<!-- 아이콘폰트 -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- 메인비주얼 플러그인 -->
+	<link rel="stylesheet" type="text/css" href="../css/plugin/slick.css">
+	<script src="../js/plugin/slick.js"></script>
+
+	<style>
+		/* css */
+.sub-con-tit:after{display:none;}
+.sub-con-tit span{display:inline-block; border-bottom:2px solid #ff0000; padding-bottom:10px;}
+</style>
+	<script>
+		jQuery(function ($) {
+			if ($(".sidebar-list").length > 0) {
+				$(window).scroll(function () {
+					var scroll_Top = $(window).scrollTop();
+					var startTop = $("#infoContainer").offset().top - 95;
+
+					if (scroll_Top > startTop) {
+						$(".sidebar-box").addClass("fixed");
+					} else {
+						$(".sidebar-box").removeClass("fixed");
+					}
+
+
+					var menuCount = $(".sidebar-list li").size();
+					var nav = new Array();
+					for (var i = 0; i < menuCount; i++) {
+						nav[i] = "nav" + i;
+						nav[i] = $($(".sidebar-list li").eq(i).find("a").attr("href")).offset().top - 95;
+					}
+
+					$(".sidebar-list li").each(function (idx) {
+						if (scroll_Top >= nav[idx]) {
+							$('.sidebar-list li').removeClass('on');
+							$('.sidebar-list li').eq(idx).addClass('on');
+						};
+					});
+				});
+				$(".sidebar-list li a").click(function () {
+					var goDiv = $($(this).attr("href")).offset().top - 90;
+					$("html, body").animate({ scrollTop: goDiv }, 300, "swing");
+
+					return false;
+				});
+			}
+		});
+	</script>
+	<script>
+		$(function () {
+			dep1 = 01,
+				dep2 = 01;
+			// sub2_num 변수가 있을때 ( 3차메뉴 )
+			dep3 = "";
+			if (dep3) {
+				$(".snb > li").eq(dep2 - 1).find(".gnb-3dep").show().children("li").eq(dep3 - 1).addClass("on");
+			}
+
+			if (dep1 > 0 && dep2 > 0) {
+				$(".sub-visual-img").addClass("on");
+				//$("#footer").hide();
+				$("#footer").css('background-color', '#e6ebef');
+				//$(".sub-page-loc > p a img").addClass("on");
+			}
+			if (dep1 == 1) {
+				$(".sidebar-list").addClass("style-1");
+				$(".snb").remove();
+			}
+			if (dep1 == 2) {
+				$(".sidebar-box").remove();
+				$(".snb").addClass("style-2");
+			}
+			if (dep1 == 3) {
+				$(".sidebar-box").remove();
+				$(".snb").addClass("style-2");
+			}
+			if (dep1 == 4) {
+				$(".sidebar-list").addClass("style-1");
+				$(".snb").remove();
+			}
+		})
+	</script>
+	<script type="text/javascript" src="../js/nav.js"></script>
+	<script type="text/javascript" src="../js/sub.js"></script>
+	<script type="text/javascript">
+		$(window).load(function () {
+			dep1 = 01,
+				dep2 = 01;
+
+			if (dep1 > 0 && dep2 > 0) {
+				$(".sub-page-loc > p a img").addClass("on");
+			}
+		})
+	</script>
+	<script>
+		$(function () {
+			$("#com_map").on("click", function (e) {
+				e.preventDefault();
+				var map_url = 'http://dmaps.kr/kyw8';
+				window.open(map_url, "_blank")
+			});
+		});
+	</script>
+	<script>
+		$(document).ready(function () {
+			$("#en_page").on('click', function () {
+				alert('Comming Soon');
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<!-- accessibility -->
+	<div class="cm-accessibility">
+		<a href="#container">본문바로가기</a>
+	</div>
+	<!-- //accessibility -->
+
+	<!-- code -->
+	<div id="wrap">
+		<!-- header -->
+		<header id="header">
+			<div id="headerInner" class="clearfix">
+				<h1 class="logo"><a href="./index.html"><img src="../images/common/logo.png" alt="SJ E&M" /></a></h1>
+				<nav id="gnb">
+					<ul class="clearfix">
+						<li class="gnb1"><a href="./info.html">기업소개</a></li>
+						<li class="gnb1"><a href="./game_service1.html">서비스</a></li>
+						<li class="gnb1"><a href="./recruiting.html">채용정보</a></li>
+						<li class="gnb1"><a href="./proposal_guide.html">제휴문의</a></li>
+					</ul>
+					<div class="nav-on-icon">
+						<span style="display: none; overflow: hidden; left: 44.0156px; width: 61px;"></span>
+					</div>
+
+				</nav>
+				<ul class="language-box clearfix">
+					<li class="select"><a href="./index.html">KR</a></li>
+					<li class="split"><span>&#124;</span></li>
+					<li><a href="javascript:void(0)" id="en_page">EN</a></li>
+				</ul>
+				<nav id="gnb_mobile">
+					<ul class="clearfix">
+						<li class="gnb1"><a href="./info.html">기업소개</a></li>
+						<li class="gnb1"><a href="./game_service1.html">서비스</a></li>
+						<li class="gnb1"><a href="./recruiting.html">채용정보</a></li>
+						<li class="gnb1"><a href="./proposal_guide.html">제휴문의</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<!-- //header -->
+		<!-- container -->
+		<div id="container">
+			<!-- visual -->
+			<section id="visual">
+				<p class="sub-visual-img">
+					<img src="../images/data_designImages/banner_info.png" alt="info_banner" />
+				</p>
+				<div class="sub-page-loc page-prev">
+					<!-- <p>
+						<a href="">
+							<img id="subPrevImg" src="" alt="subPrevImg">
+							<em class="font-poppin"></em>
+						</a>
+					</p>  -->
+				</div>
+				<div class="sub-page-loc page-next">
+					<!-- <p>
+						<a href="">
+							<img id="subNextImg" src="" alt="subNextImg">
+							<em class="font-poppin"></em>
+						</a>
+					</p> -->
+				</div>
+				<div class="sub-visual-txt">
+					<div class="braket"><span></span></div>
+					<h2>기업소개</h2>
+					<h3 class="font-poppin">BUSINESS INTRODUCTION</h3>
+					<p class="font-poppin">
+						<span>Home</span>
+						<span>&gt;</span>
+						<span>기업소개</span>
+						<span>&gt;</span>
+						<span class="point">기업소개</span>
+					</p>
+				</div>
+				<aside id="sideBar">
+					<div class="sidebar-box">
+						<ul class="sidebar-list clearfix">
+							<li class="on"><a href="#infoCon01">기업 소개</a></li>
+							<li><a href="#infoCon02">연혁</a></li>
+							<!-- <li><a href="#infoCon03">수상</a></li> -->
+							<li><a href="#infoCon04">오시는길</a></li>
+						</ul>
+					</div>
+					<ul class="snb">
+						<li class="on"><a href="#infoCon01">기업 소개</a></li>
+						<li><a href="#infoCon02">연혁</a></li>
+						<!-- <li><a href="#infoCon03">수상</a></li> -->
+						<li><a href="#infoCon04">오시는길</a></li>
+					</ul>
+				</aside>
+			</section>
+			<!-- //visual -->
+			<!-- middleArea -->
+			<div id="middleArea">
+				<!-- content -->
+				<section id="content">
+					<!-- 컨텐츠 내용 -->
+					<article id="infoContainer" class="area">
+						<div id="infoCon01" class="sub-content">
+							<h3 class="sub-con-tit"><span>기업소개</span></h3>
+							<strong class="subject-style01">Go Anyworld, Do Anything!</strong>
+							<p class="txt-style01"><strong>SJ E&amp;M</strong>은 모바일 플랫폼과 게임을 서비스하는 플랫폼 개발사 입니다.<br>
+								국내 및 해외로의 플랫폼 서비스와 게임서비스를 이끌어갈 능력있는 회사가 되기 위해<br>
+								꾸준히 노력 할 것입니다.
+							</p><br><br>
+							<strong class="subject-style01">입사해야 하는 이유 No.3</strong>
+							<p class="txt-style01"><strong>1.글로벌 엔터테인먼트 기업을 향한 도전!</strong><br>
+								세계 더 많은 사람과 함께 감동을 경험하며, 새로운 가치를 만들어가고 내일의 꿈을 이루어가기 때문에 글로벌을 향한 도전과<br>혁신을 멈추지 않고 있습니다.
+							</p>
+							<p class="txt-style01"><strong>2. 함께하는 즐거움!</strong><br>꿈과 희망을 세상과 공유하고 모든이의 꿈을 지지하고 열정을 키우는 회사로 키우고자 합니다.<br>
+							</p>
+							<p class="txt-style01"><strong>3. 우리를 위한 라이프!</strong><br>우리와 나아가서는 모두를 위한 건강한 삶의 환경을 만들어 가고자 위함입니다.<br>
+							</p>
+							<p class="txt-style01">
+								<strong class="subject-style01">우리의 모습</strong>
+								책임감이 있고, 센스가 가득한&nbsp;<strong>You</strong><br>
+								서로에게 의지가 될 수 있는&nbsp;<strong>Me</strong><br>
+								Passion 가득한 마음을 가진&nbsp;<strong>We</strong><br>
+
+							</p><br><br>
+
+						</div>
+						<div id="infoCon02" class="sub-content">
+							<h3 class="sub-con-tit"><span>연혁</span></h3>
+							<div class="history-box">
+								<img src="../images/info/history.png">
+								<!-- <dl>
+									<dt>2017</dt>
+									<dd>
+										<div class="history-info start">
+											<p>
+												<em>06</em>
+												<span><img src="../images/common/logo.png" alt="" style="max-width:142px;" /></span>
+												작성 전 입니다. </p>
+										</div>
+										<div class="history-info">
+											<p>
+												<em>03</em>
+												<span><img src="../images/common/logo.png" alt="" style="max-width:142px;" /></span>
+												작성 전 입니다. </p>
+										</div>
+									</dd>
+								</dl>
+
+
+								<dl>
+									<dt>2016</dt>
+									<dd>
+										<div class="history-info">
+											<p>
+												<em>12</em>
+												<span><img src="../images/common/logo.png" alt="" style="max-width:142px;" /></span>
+												작성 전 입니다.
+											</p>
+										</div>
+										<div class="history-info">
+											<p>
+												<em>10</em>
+												<span><img src="../images/common/logo.png" alt="" style="max-width:142px;" /></span>
+												작성 전 입니다.
+											</p>
+										</div>
+										<div class="history-info">
+											<p>
+												<em>07</em>
+												<span><img src="../images/common/logo.png" alt="" style="max-width:142px;" /></span>
+												작성 전 입니다.
+											</p>
+										</div>
+									</dd>
+								</dl>
+
+
+								<dl>
+									<dt>2015</dt>
+									<dd>
+										<div class="history-info">
+											<p>
+												<em>12</em>
+												<span><img src="../images/common/logo.png" alt="" style="max-width:142px;" /></span>
+												작성 전 입니다.
+											</p>
+										</div>
+										<div class="history-info">
+											<p>
+												<em>12</em>
+												<span><img src="../images/common/logo.png" alt="" style="max-width:142px;" /></span>
+												작성 전 입니다.
+											</p>
+										</div>
+										<div class="history-info">
+											<p>
+												<em>11</em>
+												<span><img src="../images/common/logo.png" alt="" style="max-width:142px;" /></span>
+												작성 전 입니다.
+											</p>
+										</div>
+										<div class="history-info">
+											<p>
+												<em>11</em>
+												<span><img src="../images/common/logo.png" alt="" style="max-width:142px;" /></span>
+												작성 전 입니다.
+											</p>
+										</div>
+										<div class="history-info">
+											<p>
+												<em>11</em>
+												<span><img src="../images/common/logo.png" alt="" style="max-width:142px;" /></span>
+												작성 전 입니다.
+											</p>
+										</div>
+										<div class="history-info">
+											<p>
+												<em>06</em>
+												<span><img src="../images/common/logo.png" alt="" style="max-width:142px;" /></span>
+												작성 전 입니다.
+											</p>
+										</div>
+									</dd>
+								</dl>
+
+
+								<dl>
+									<dt>2014</dt>
+									<dd>
+										<div class="history-info">
+											<p>
+												<em>11</em>
+												<span><img src="../images/common/logo.png" alt="" style="max-width:142px;" /></span>
+												작성 전 입니다.
+											</p>
+										</div>
+										
+									</dd>
+								</dl>
+
+
+								<dl class="finish">
+									<dt>2013</dt>
+									<dd>
+										<div class="history-info finish">
+											<p>
+												<em>05</em>
+												<span><img src="../images/common/logo.png" alt="" style="max-width:142px;" /></span>
+												작성 전 입니다.
+											</p>
+									</dd>
+								</dl> -->
+							</div>
+						</div>
+						<div id="infoCon04" class="sub-content last" style="min-height:675px;">
+							<h3 class="sub-con-tit"><span>오시는길</span></h3>
+							<div class="map">
+								<div id="map" style="width:1100px;height:500px;"></div>
+								<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2782d013b4a9af976b94aa647fdef3e3"></script>
+								<script>
+									var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+										mapOption = {
+											center: new daum.maps.LatLng(37.547137, 127.05150), // 지도의 중심좌표
+											level: 2, // 지도의 확대 레벨
+											mapTypeId: daum.maps.MapTypeId.ROADMAP, // 지도종류
+										};
+									// 지도를 생성한다 
+									var map = new daum.maps.Map(mapContainer, mapOption);
+									// 지도에 마커를 생성하고 표시한다
+									var marker = new daum.maps.Marker({
+										position: new daum.maps.LatLng(37.547137, 127.05150),
+										text: 'dd',
+										map: map // 마커를 표시할 지도 객체
+									});
+
+								</script>
+								<p id="com_map" class="loc-txt"><span><i class="material-icons">&#xE0C8;</i></span>
+									<a href="#">서울특별시 성동구 성수일로8길 5 1806호</a></p>
+							</div>
+					</article>
+					<!-- //컨텐츠 내용 -->
+					<div style="height:120px"></div>
+				</section>
+				<!-- //content -->
+			</div>
+		</div>
+		<!-- //container -->
+		<!-- PC footer -->
+		<footer id="footer">
+			<div id="footerInner" class="clearfix area">
+				<h2 class="footer-logo fl"></h2>
+				<div class="footer-info fr">
+					<p style="margin-right:200px">
+						<v style="margin-right: 15px"><img src="../images/common/logo.png" alt='LOGO' /></v>
+						<span style="text-align: left"><i class="material-icons"></i>(주)대표이사 김선수 ( 사업자 등록번호: 357-87-01094 )<br>
+							주소 : 서울특별시 성동구 성수일로8길5 서울숲 SKVTOWER 1806호<br>
+							Tel : 02-6233-8236&nbsp;Fax : 02-6233-8235<br>
+							copyright&#169;SJ E&amp;M All right reserved.</span>
+					</p>
+				</div>
+			</div>
+		</footer>
+		<!-- 모바일 footer -->
+		<footer id="footer_m">
+			<div id="footerInner" class="clearfix area">
+				<h2 class="footer-logo fl"></h2>
+				<div class="footer-info">
+					<p>
+						<v style="margin-right: 15px;"><img src="../images/common/bk_logo.png" alt='LOGO' /></v>
+						<span style="text-align: left"><i class="material-icons"></i>(주)대표이사 김선수 ( 사업자 등록번호: 357-87-01094 )<br>
+							주소 : 서울특별시 성동구 성수일로8길5 서울숲 SKVTOWER 1806호<br>
+							Tel : 02-6233-8236&nbsp;Fax : 02-6233-8235<br>
+							copyright&#169;SJ E&amp;M All right reserved.</span>
+					</p>
+				</div>
+			</div>
+	   </footer>
+
+
+	</div>
+	<!-- //code -->
+</body>
+
+</html>
