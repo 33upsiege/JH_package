@@ -1,0 +1,225 @@
+@charset "UTF-8";
+
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+{margin:0; padding:0;}
+
+
+.wrap_reservation{width:1080px;overflow:hidden;background:#fff;margin:0 auto;}
+ .subMenu{width: 20%;height: 600px; float:right;background-color:#083763;color:white;padding-top:50px;padding-left:20px;padding-right: 20px;}
+ .img{display: inline-block;}
+ *{font-family: 'Jeju Gothic', sans-serif;}
+    
+    
+    
+.order{margin-top: 50px;}
+.order button{width: 50px;padding: 5px; font-size: 15px; font-family: 'Jeju Gothic', sans-serif;}
+.resDate{width: 70%; height: 600px;float: left; margin-top: 30px;}
+.resCar{width: 70%; height: 600px;float: left; margin-top: 30px;}
+.preBtn{display: inline-block;}
+.preBtn button{ width: 90px;font-size: 15px; font-family: 'Jeju Gothic', sans-serif;}
+.nextBtn{display: inline-block; margin-left: 10px;}  
+.nextBtn button{ width: 90px; font-size: 15px; font-family: 'Jeju Gothic', sans-serif;}
+.btn{float: right;}
+.option_btn{margin-top: 20PX; float: right;}
+ 
+
+.resStartDate, .resEndDate{display: inline;}
+.waring{margin-top: 30px;}
+.waringContent{background-color: azure;padding: 18px}
+
+
+.selectType{background-color: azure;margin: 15px;padding: 23px}
+ 
+#type{
+    width: 120px;
+    height: 30px;
+}
+ #car_table input{
+    width: 180px;
+    height: 20px;
+}
+
+#car_table {
+	width: 100%;
+	border-top: 1px solid #083763;
+	border-collapse: collapse;
+}
+#car_table td {
+	border-bottom: 1px solid #083763;
+	padding: 10px;
+	text-align: center;
+}
+ 
+.option_title{
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.saleTable,.insuranceTable{
+    margin-bottom: 30px;
+}
+
+.cupon_select{
+    width: 180px;
+    height: 22px;
+}
+.insurance_select{
+    width: 180px;
+    height: 20px;
+}
+
+.resDate table {
+	width: 100%;
+	border-top: 1px solid orange;
+	border-collapse: collapse;
+ }
+.resDate td {
+	border-bottom: 1px solid #083763;
+	padding: 10px;
+	font-size: 15px;
+	height: 22px;
+ }
+ 
+ 
+.qua{width: 70%; height: 600px;float: left; margin-top: 30px;}
+.quaContent{overflow-y: scroll; height: 500px; margin-top: 20px;}
+#qua_table {
+	width: 100%;
+	border-top: 1px solid #083763;
+	border-collapse: collapse;
+	margin-bottom: 20px;
+}
+#qua_table  th{
+    font-size: 14px;
+    background-color: azure;
+}
+#qua_table th, #qua_table td {
+	border-bottom: 1px solid #083763;
+	padding: 10px;
+	text-align: center;
+	height: 25px;
+}
+
+.quaTitle{
+    font-size: 30px;
+    color: darkorange;
+}  
+.p_title{font-size: 18px;margin-top: 20px; margin-bottom: 10px;}
+.quaContent p{padding: 3px;}
+.pText{color: dimgray; padding-left: 10px;}
+
+.pWaring{
+    display: inline-block;
+    color: darkorange;
+    font-size: 15px;
+}
+.qua_radio{
+    height: 15px;
+    width: 15px;
+}
+.waringBox{margin-top: 15px;}
+.resev_nextBtn{margin-top: 150PX; float: right;}  
+.resev_nextBtn button{ width: 80px;font-size: 15px; font-family: 'Jeju Gothic', sans-serif;}
+.city select{
+    width: 350px;
+    height: 30px;
+}
+.reserv_input{
+    width: 180px;
+    height: 20px;
+}
+
+.wrap_shop_info {width: 340px; height:500px; margin:0px; padding:0px;}
+.wrap_shop_info .top{width: 100%; height: 30px; background-color: #083763;color: darkorange; padding: 15px; font-family: 'Jeju Gothic', sans-serif;}
+.wrap_shop_info .top .storeInfo{font-size: 18px; font-family: 'Jeju Gothic', sans-serif;}
+.wrap_shop_info #shop_info{font-size: 18px; font-family: 'Jeju Gothic', sans-serif;}
+.wrap_shop_info #store_table {
+    width: 100%;
+    border-top: 1px solid orange;
+    border-collapse: collapse;
+    margin: 10px;
+    font-size: 12px;
+  }
+.wrap_shop_info #store_table th, .wrap_shop_info #store_table td {
+    border-bottom: 1px solid #083763;
+    padding: 10px;
+    font-size: 12px;
+    height: 22px;
+  }
+.wrap_shop_info #store_table th{background-color: azure}
+
+h1.store_id {font-size: 20px; margin: 10px;}
+
+div.closeBtn{text-align:center;}
+button.closeBtn{width: 45px;height: 30px;font-size: 12px;}
+
+
+
+.sub_ib{
+	display: inline-block;
+	margin-bottom: 7px;
+	margin-right: 2px;	
+}
+
+.sub_p{
+	font-size: 13px;
+	color: azure;
+}
+
+.sub_span{
+	font-size: 12px;
+}
+
+ hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+ } 
+ 
+.option_p{
+	margin-bottom: 5px;
+	font-size: 13px;	
+	color: azure;	
+}
+.price_p{
+	font-size: 13px;
+	color: azure;	
+}
+.option_input{
+	dispaly: block;
+	margin-bottom: 7px;
+}
+
+.option_input {border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px; 
+background-color:#083763; color: white; font-family: 'Jeju Gothic', sans-serif; font-size: 12px; width:200px;}
+.price_input {border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px; 
+background-color:#083763; color: white; font-family: 'Jeju Gothic', sans-serif; font-size: 20px; margin-top: 5px; margin-bottom: 5px;}
+
+
+#complete {
+    margin-top: 100px;
+    margin-bottom: 250px;
+    text-align: center;
+    }
+    
+    
+.rent_shop{
+    font-family: 'Jeju Gothic', sans-serif;
+    color: darkorange;
+    text-decoration: underline;
+}
+
+.btn{display:inline-block;padding:6px 12px;margin-bottom:0;font-size:14px;font-weight:400;line-height:1.42857143;text-align:center;white-space:nowrap;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-image:none;border:1px solid transparent;border-radius:4px}
+.orderBtn{display:inline-block;padding:6px 12px;margin-bottom:0;font-size:14px;font-weight:400;line-height:1.42857143;text-align:center;white-space:nowrap;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-image:none;border:1px solid transparent;border-radius:4px}
+.carType{
+	background-color: azure;
+}
+
+#map_shop{
+	width: 270px;
+	height: 250px;
+}

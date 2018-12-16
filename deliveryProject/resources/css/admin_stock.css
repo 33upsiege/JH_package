@@ -1,0 +1,495 @@
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+.StockTitle {
+	margin-inline-start: 200px;
+	font-weight: 600;
+	font-size: 50px;
+	font-family: Jeju Gothic;
+}
+
+.stock_list_wrap {
+    float: left;
+    margin: auto 0;
+    margin-left: 20%;
+}
+
+table.StockListTB {
+	border-collapse: collapse;
+	text-align: left;
+	line-height: 1.5;
+	border-left: 1px solid #ccc;
+}
+
+table.StockListTB thead th {
+	padding: 10px;
+	font-weight: bold;
+	border-top: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-bottom: 2px solid #c00;
+	background: #dcdcd1;
+}
+
+table.StockListTB tbody th {
+	width: 100px;
+	padding: 10px;
+	font-weight: bold;
+	vertical-align: top;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	background: #ececec;
+	font-size: 18px;
+	font-family: Jeju Gothic;
+}
+
+table.StockListTB td {
+	width: 160px;
+	padding: 5px;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	font-size: 17px;
+	font-family: Jeju Gothic;
+}
+
+table.StockModify {
+	border-collapse: collapse;
+	text-align: left;
+	line-height: 1.5;
+	border-left: 1px solid #ccc;
+}
+
+table.StockModify thead th {
+	padding: 10px;
+	font-weight: bold;
+	border-top: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-bottom: 2px solid #c00;
+	background: #dcdcd1;
+}
+
+table.StockModify tbody th {
+	width: 150px;
+	padding: 10px;
+	font-weight: bold;
+	vertical-align: top;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	background: #ececec;
+	font-family: Jeju Gothic;
+	font-size: 18px;
+}
+
+table.StockModify td {
+	width: 290px;
+	padding: 5px;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	font-size: 17px;
+	font-family: Jeju Gothic;
+}
+
+
+table.StockInsert {
+	border-collapse: collapse;
+	text-align: left;
+	line-height: 1.5;
+	border-left: 1px solid #ccc;
+}
+
+table.StockInsert thead th {
+	padding: 10px;
+	font-weight: bold;
+	border-top: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-bottom: 2px solid #c00;
+	background: #dcdcd1;
+}
+
+table.StockInsert tbody th {
+	width: 150px;
+	padding: 10px;
+	font-weight: bold;
+	vertical-align: top;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	background: #ececec;
+	font-family: Jeju Gothic;
+	font-size: 18px;
+}
+
+table.StockInsert td {
+	width: 290px;
+	padding: 5px;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	font-size: 17px;
+	font-family: Jeju Gothic;
+}
+.Update {
+	-moz-box-shadow: inset 0px 1px 3px 0px #91b8b3;
+	-webkit-box-shadow: inset 0px 1px 3px 0px #91b8b3;
+	box-shadow: inset 0px 1px 3px 0px #91b8b3;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #768d87
+		), color-stop(1, #6c7c7c));
+	background: -moz-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background: -webkit-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background: -o-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background: -ms-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#768d87',
+		endColorstr='#6c7c7c', GradientType=0);
+	background-color: #768d87;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #566963;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 5px 10px;
+	text-decoration: none;
+	text-shadow: 0px -1px 0px #2b665e;
+}
+
+.All_Update {
+	-moz-box-shadow: inset 0px 1px 3px 0px #91b8b3;
+	-webkit-box-shadow: inset 0px 1px 3px 0px #91b8b3;
+	box-shadow: inset 0px 1px 3px 0px #91b8b3;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #768d87
+		), color-stop(1, #6c7c7c));
+	background: -moz-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background: -webkit-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background: -o-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background: -ms-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#768d87',
+		endColorstr='#6c7c7c', GradientType=0);
+	background-color: #768d87;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #566963;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 5px 10px;
+	text-decoration: none;
+	text-shadow: 0px -1px 0px #2b665e;
+}
+
+.product_delete , .management_home_button {
+	-moz-box-shadow: inset 0px 1px 3px 0px #91b8b3;
+	-webkit-box-shadow: inset 0px 1px 3px 0px #91b8b3;
+	box-shadow: inset 0px 1px 3px 0px #91b8b3;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #768d87
+		), color-stop(1, #6c7c7c));
+	background: -moz-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background: -webkit-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background: -o-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background: -ms-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#768d87',
+		endColorstr='#6c7c7c', GradientType=0);
+	background-color: #768d87;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #566963;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 5px 10px;
+	text-decoration: none;
+	text-shadow: 0px -1px 0px #2b665e;
+}
+
+.product_insert, .product_ma_modify{
+	-moz-box-shadow: inset 0px 1px 3px 0px #91b8b3;
+	-webkit-box-shadow: inset 0px 1px 3px 0px #91b8b3;
+	box-shadow: inset 0px 1px 3px 0px #91b8b3;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #768d87
+		), color-stop(1, #6c7c7c));
+	background: -moz-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background: -webkit-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background: -o-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background: -ms-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#768d87',
+		endColorstr='#6c7c7c', GradientType=0);
+	background-color: #768d87;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #566963;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 5px 10px;
+	text-decoration: none;
+	text-shadow: 0px -1px 0px #2b665e;
+}
+
+.Update_Plus, .All_Update_Plus {
+	-moz-box-shadow: inset 0px 1px 3px 0px #91b8b3;
+	-webkit-box-shadow: inset 0px 1px 3px 0px #91b8b3;
+	box-shadow: inset 0px 1px 3px 0px #91b8b3;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #768d87
+		), color-stop(1, #6c7c7c));
+	background: -moz-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background: -webkit-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background: -o-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background: -ms-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#768d87',
+		endColorstr='#6c7c7c', GradientType=0);
+	background-color: #768d87;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #566963;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 5px 10px;
+	text-decoration: none;
+	text-shadow: 0px -1px 0px #2b665e;
+}
+
+/* 기초 CSS 디자인 */
+
+.Modify_hidden , .Insert_hidden {
+	display: none;
+	visibility: hidden;
+}
+
+/* 본문 디자인 */
+
+/* 버튼으로 사용할 라벨 디자인 */
+.Modify_button{
+	font-weight: 600;
+	cursor: pointer;
+	font-size: 50px;
+	font-family: Jeju Gothic;
+	margin-inline-start: 180px;
+}
+.Insert_button{
+	font-weight: 600;
+	cursor: pointer;
+	font-size: 50px;
+	font-family: Jeju Gothic;
+}
+/* 모달 윈도우 디자인 */
+.Modify_box_modal {
+	position: absolute;
+	display: block;
+	width: 600px;
+	height: 670px;
+	top: 30%;
+	left: 60%;
+	margin-top: -75px;
+	margin-left: -150px;
+	background: gray;
+	border: 1px solid #386980;
+	overflow: hidden;
+	/* 아래 부분은 애니메이션 효과를 위한 부분 */
+	visibility: collapse;
+	opacity: 0.7;
+	filter: alpha(opacity = 60);
+	-webkit-transition: all .2s ease;
+	transition: all .2s ease;
+	-webkit-transform: scale(0, 0);
+	-ms-transform: scale(0, 0);
+	transform: scale(0, 0);
+}
+
+.Insert_box_modal{
+	position: absolute;
+	display: block;
+	width: 1200px;
+	height: 200px;
+	top: 30%;
+	left: 20%;
+	margin-top: -75px;
+	margin-left: -150px;
+	background: gray;
+	border: 1px solid #386980;
+	overflow: hidden;
+	/* 아래 부분은 애니메이션 효과를 위한 부분 */
+	visibility: collapse;
+	opacity: 0.7;
+	filter: alpha(opacity = 60);
+	-webkit-transition: all .2s ease;
+	transition: all .2s ease;
+	-webkit-transform: scale(0, 0);
+	-ms-transform: scale(0, 0);
+	transform: scale(0, 0);
+}
+
+.Modify_box_modal:hover , .Insert_box_modal:hover{
+	opacity: 1;
+	filter: alpha(opacity = 100);
+}
+
+/* 닫기 버튼으로 사용할 라벨 */
+.Modify_closer , .Insert_closer{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	top: 0;
+	right: 0;
+	background: #eee;
+	border-left: 1px solid #386980;
+	border-bottom: 1px solid #386980;
+	text-align: center;
+	line-height: 26px;
+	font-size: 16x;
+	cursor: pointer;
+}
+
+
+
+.text {
+	display: inline-block;
+	padding: 20px;
+}
+
+.text p {
+	font-size: 19px;
+	margin: 0;
+	font-family: Jeju Gothic;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+/* 모달 윈도우가 팝업되는 코어 소스 */
+input#Modify_modal[type=checkbox]:checked ~ .Modify_box_modal , input#Insert_modal[type=checkbox]:checked ~ .Insert_box_modal {
+	visibility: visible;
+	-webkit-transform: scale(1, 1);
+	-ms-transform: scale(1, 1);
+	transform: scale(1, 1);
+}
+
+.product_ma_hidden {
+ display:none;
+  visibility:hidden;
+}
+
+/* 본문 디자인 */
+.product_ma_wrap{
+/* 	margin-inline-start: 300px; */
+}
+
+/* 버튼으로 사용할 라벨 디자인 */
+.product_ma_button{
+	font-size:19px;
+  font-weight:600;
+  vertical-align:middle;
+  cursor:pointer;
+}
+
+/* 모달 윈도우 디자인 */
+.product_ma_box_modal {
+	position: fixed;
+	display: block;
+	width: 300px;
+	height: 200px;
+	top: 50%;
+	left: 70%;
+	margin-top: -75px;
+	margin-left: -150px;
+	background: gray;
+	border: 1px solid #386980;
+	overflow: hidden;
+	/* 아래 부분은 애니메이션 효과를 위한 부분 */
+	visibility: collapse;
+	opacity: 0.7;
+	filter: alpha(opacity = 60);
+	-webkit-transition: all .2s ease;
+	transition: all .2s ease;
+	-webkit-transform: scale(0, 0);
+	-ms-transform: scale(0, 0);
+	transform: scale(0, 0);
+}
+
+.product_ma_box_modal:hover {
+	opacity: 1;
+	filter: alpha(opacity = 100);
+}
+
+/* 닫기 버튼으로 사용할 라벨 */
+.product_ma_closer {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	top: 0;
+	right: 0;
+	background: #eee;
+	border-left: 1px solid #386980;
+	border-bottom: 1px solid #386980;
+	text-align: center;
+	line-height: 26px;
+	font-size: 16x;
+	cursor: pointer;
+}
+
+.product_ma_text {
+	display: inline-block;
+	padding: 40px;
+}
+
+/* 모달 윈도우가 팝업되는 코어 소스 */
+input#product_ma_modal[type=checkbox]:checked ~ .product_ma_box_modal {
+	visibility: visible;
+	-webkit-transform: scale(1, 1);
+	-ms-transform: scale(1, 1);
+	transform: scale(1, 1);
+}
+
+.product_ma_comment {
+	font-family: Jeju Gothic;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.chart_button {
+	-moz-box-shadow: inset 0px 1px 3px 0px #91b8b3;
+	-webkit-box-shadow: inset 0px 1px 3px 0px #91b8b3;
+	box-shadow: inset 0px 1px 3px 0px #91b8b3;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #768d87
+		), color-stop(1, #6c7c7c));
+	background: -moz-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background: -webkit-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background: -o-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background: -ms-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#768d87',
+		endColorstr='#6c7c7c', GradientType=0);
+	background-color: #768d87;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #566963;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 5px 10px;
+	text-decoration: none;
+	text-shadow: 0px -1px 0px #2b665e;
+}

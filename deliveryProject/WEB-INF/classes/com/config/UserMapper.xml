@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserMapper">
+
+	<resultMap type="Member" id="Member">
+		<result column="member_id" property="MemberId"/>
+		<result column="member_name" property="MemberName"/>
+		<result column="member_passwd" property="MameberPasswd"/>
+		<result column="member_phone" property="MemberPhone"/>
+		<result column="member_email" property="MemberEmail"/>
+		<result column="member_address" property="MemberAddress"/>
+		<result column="member_sns" property="MemberSns"/>
+		<result column="member_status" property="MameberStatus"/>
+		<result column="member_joindate" property="MemberJoinDate"/>
+		<result column="member_withdrawal" property="MemberWithdrawal"/>
+	</resultMap>
+	
+	<resultMap type="Guest" id="Guest">
+		<result column="g_member_name" property="GMemberName"/>
+		<result column="g_member_phone" property="GMaemberPhone"/>
+		<result column="g_member_email" property="GMemberEmail"/>
+		<result column="g_member_address" property="GMamberAddress"/>
+		<result column="g_member_joindate" property="GMamberJoinDate"/>
+	</resultMap>
+	
+	 <resultMap type="OrderInformationList" id="OrderInformationList">
+		<result column="order_code" property="orderCode"/>
+		<result column="order_id" property="orderId"/>
+		<result column="order_tel" property="orderTel"/>
+		<result column="order_request" property="orderRequest"/>
+		<result column="order_people" property="orderPeople"/>
+		<result column="order_address" property="orderAddress"/>
+		<result column="order_status" property="orderStatus"/>
+		<result column="order_all_price" property="orderAllPrice"/>
+		<result column="ordercount" property="orderCount" />
+	</resultMap>
+
+	 <resultMap type="OrderMember" id="OrderMember">
+		<collection property="member" resultMap="Member"/>
+		<collection property="guest" resultMap="Guest"/>
+		<collection property="orderInformationList" resultMap="OrderInformationList"/>
+	</resultMap>
+	
+	<select id="getUserId" parameterType="string" resultType="string">
+		select m.member_id
+		  from member_list m,
+		  	   order_information_list ol
+		 where ol.order_id = m.member_id
+		   and order_code = #{orderCode}
+	</select>
+	
+	<select id="getGUserMail" parameterType="hashmap" resultMap="OrderMember">
+		select g.g_member_email,
+		       g.g_member_name,
+		       ol.order_status,
+		       ol.order_code
+		  from member_guest_list g, 
+		  	   order_information_list ol
+		 where ol.order_id = g.member_email 
+		   and ol.order_id = #{memberId}
+		   and ol.order_code = #{orderCode}
+	</select>
+	
+	<select id="getUserMail" parameterType="hashmap" resultMap="OrderMember">
+		select m.member_email,
+		       m.member_name,
+		       ol.order_status,
+		       ol.order_code
+		  from member_list m, 
+		  	   order_information_list ol
+		 where ol.order_id = m.member_id 
+		   and ol.order_id = #{memberId}
+		   and ol.order_code = #{orderCode}
+	</select>
+	
+</mapper>

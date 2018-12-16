@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.QABoard">
+	<!-- 
+	num number(7,0) NOT NULL,
+	title varchar2(50) NOT NULL,
+	content varchar2(500),
+	writeday date,
+	type varchar2(10),
+	userid varchar2(15) NOT NULL,
+ 	reproot number(7,0) not null,
+ 	repstep number(7,0) not null, 
+ 	-->
+	<select id="getAllList" resultType="QABoardDTO" parameterType="hashmap">
+		select num, title, content
+			 , to_char(writeday,'YY/MM/DD HH:MM:SS') writeday
+			 , type, userid, reproot, repstep
+		from qaboard
+		<if test="searchName == 'title'">
+	       where title LIKE '%'||#{searchValue}||'%'
+	    </if>
+	    <if test="searchName == 'userid'">
+	       where userid LIKE '%'||#{searchValue}||'%'
+	    </if> 
+		order by reproot desc, repstep asc
+	</select>
+	
+	<select id="totalCount" resultType="int">
+	   select count(*)
+	   from qaboard
+	</select>
+	
+	<select id="totalCountSearch" resultType="int" parameterType="hashmap">
+	   select count(*)
+	   from qaboard
+	   
+	    <if test="searchName == 'title'">
+	       where title LIKE '%'||#{searchValue}||'%'
+	    </if>
+	    <if test="searchName == 'userid'">
+	       where userid LIKE '%'||#{searchValue}||'%'
+	    </if> 
+	</select>
+	
+	<select id="getContent" resultType="QABoardDTO" parameterType="int">
+		select num, title, content
+			 , to_char(writeday,'YY/MM/DD HH:MM:SS') writeday
+			 , type, userid, reproot, repstep
+		from qaboard
+		where num = #{num}
+	</select>
+	
+	<insert id="write" parameterType="QABoardDTO">
+		insert into qaboard
+		values (qaboard_num_seq.nextval,#{title},#{content}, sysdate, #{type}, #{userid},qaboard_num_seq.currval, 0)
+	</insert>
+	
+	<insert id="repWrite" parameterType="QABoardDTO">
+		insert into qaboard
+		values (qaboard_num_seq.nextval,#{title},#{content}, sysdate, #{type}, #{userid},#{reproot}, #{repstep})
+	</insert>
+	
+	<update id="update" parameterType="QABoardDTO">
+		update qaboard
+		set title = #{title} , content = #{content}, type = #{type}
+		where num = #{num}
+	</update>
+	
+	
+	<!-- 부모글 삭제시 댓글 포함 전부 삭제 댓글 삭제시 해당 댓글만 삭제 -->
+	<delete id="delete" parameterType="int">
+	delete 
+	  from qaboard 
+	 where num in
+	   ( 
+	  	   select a.num 
+	  	     from qaboard a,  
+	    		(
+	    		  select num, reproot, repstep 
+	    		  	from qaboard 
+	    		   where num = #{num} ) b 
+	    	where 1 = 1
+	    	  and b.repstep = 0 and a.reproot = b.reproot
+	    	   or b.repstep != 0 and a.num = b.num
+	    )
+	</delete>
+	
+</mapper>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.reservation">
+
+	<insert id="insertOrder" parameterType="ReservationDTO">
+	   INSERT INTO reservation (rentid,
+								rentdate,
+								real_returndate,
+								returndate,
+								insurance,
+								userid,
+								carid,
+								shopid,
+								price
+						  <if test="navigation != null">
+								,navigation
+						  </if>
+						  <if test="babySeat != null">
+								,babyseat
+				  		  </if>
+				  		  <if test="babyCarriage != null">	
+								,baby_carriage
+					      </if>	
+					      )
+			 VALUES (('R'||reservation_seq.nextval),
+			 		  #{rentDate},
+			 		  null,
+					  #{returnDate},
+					  #{insurance},
+				      #{userId},
+					  #{carId},
+					  #{shopId},
+					  #{price}
+				  <if test="navigation != null">
+					  ,#{navigation}
+				  </if>
+				  <if test="babySeat != null">
+					  ,#{babySeat}
+		  		  </if>
+		  		  <if test="babyCarriage != null">	
+					  ,#{babyCarriage}
+			      </if>
+			      )
+	</insert>
+	
+	<update id="updateState" parameterType="string">
+		UPDATE car 
+		   SET state = 'Y'
+		 WHERE carid = #{carId}
+	</update>
+	
+	<resultMap type="CarDTO" id="CarDTO">
+		<result column="carid" property="carId"/>
+		<result column="cartype" property="carType"/>
+		<result column="carname" property="carName"/>
+		<result column="manufactured_com" property="manufacturedCom"/>
+		<result column="color" property="color"/>
+		<result column="price" property="price"/>
+		<result column="image" property="image"/>
+		<result column="shopid" property="shopId"/>
+		<result column="state" property="state"/>
+	</resultMap>
+	
+	<resultMap type="reservationDTO" id="ReservationDTO">
+		<result column="rentid" property="rentId"/>
+		<result column="rentdate" property="rentDate"/>
+		<result column="returndate" property="returnDate"/>
+		<result column="real_returndate" property="RealReturnDate"/>
+		<result column="insurance" property="insurance"/>
+		<result column="shopid" property="shopId"/>
+		<result column="userid" property="userId"/>
+		<result column="navigation" property="navigation"/>
+		<result column="babyseat" property="babySeat"/>
+		<result column="baby_carriage" property="babyCarriage"/>
+		<result column="price" property="price"/>
+		<collection property="carDTO" resultMap="CarDTO"/>
+	</resultMap>
+	
+	<select id="totalCount" resultType="int">
+		SELECT count(*)
+		  FROM reservation
+	</select>
+	
+	<select id="totalCountSearch" parameterType="MyRentCheckPageDTO" resultType="int">
+		SELECT count(*)
+		  FROM reservation
+		 WHERE userid = #{userId}
+		 <if test="startDate!=null and startDate!=''"> 
+			   and rentdate between #{startDate} and #{endDate}
+		 </if>
+	</select>
+
+	
+	<select id="rentCheck" parameterType="MyRentCheckPageDTO" resultMap="ReservationDTO">
+		SELECT r.rentid,
+			   r.rentdate,
+			   r.real_returndate,
+			   r.returndate,
+			   r.userid,
+			   r.price,
+			   c.carname
+		  FROM reservation r 
+		  JOIN car c 
+		    ON r.carid = c.carid
+		 WHERE userid = #{userId}
+		 <if test="startDate!=null and startDate!=''"> 
+			   and rentdate between #{startDate} and #{endDate}
+		 </if>
+	  ORDER BY rentdate desc
+	</select>
+	
+</mapper>

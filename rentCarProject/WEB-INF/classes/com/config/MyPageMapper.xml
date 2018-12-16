@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mypage">
+	
+	<resultMap type="CarDTO" id="CarDTO">
+		<result column="carid" property="carId"/>
+		<result column="cartype" property="carType"/>
+		<result column="carname" property="carName"/>
+		<result column="manufactured_com" property="manufacturedCom"/>
+		<result column="color" property="color"/>
+		<result column="price" property="price"/>
+		<result column="image" property="image"/>
+		<result column="shopid" property="shopId"/>
+		<result column="state" property="state"/>
+	</resultMap>
+	
+	<resultMap type="ReservationDTO" id="ReservationDTO">
+		<result column="rentid" property="rentId"/>
+		<result column="rentdate" property="rentDate"/>
+		<result column="returndate" property="returnDate"/>
+		<result column="real_returndate" property="RealReturnDate"/>
+		<result column="insurance" property="insurance"/>
+		<result column="shopid" property="shopId"/>
+		<result column="userid" property="userId"/>
+		<result column="navigation" property="navigation"/>
+		<result column="babyseat" property="babySeat"/>
+		<result column="baby_carriage" property="babyCarriage"/>
+		<result column="price" property="price"/>
+		<collection property="carDTO" resultMap="CarDTO"/>
+	</resultMap>
+	
+	<select id="totalCount" resultType="int">
+		SELECT count(*)
+		  FROM reservation
+		 WHERE userid = #{userId}
+	</select>
+	
+	<select id="totalCountSearch" parameterType="MyRentCheckPageDTO" resultType="int">
+		SELECT count(*)
+		  FROM reservation
+		 WHERE userid = #{userId}
+		 <if test="startDate!=null and startDate!=''"> 
+			   and rentdate between #{startDate} and #{endDate}
+		 </if>
+	</select>
+
+	
+	<select id="rentCheck" parameterType="MyRentCheckPageDTO" resultMap="ReservationDTO">
+		SELECT r.rentid,
+			   r.rentdate,
+			   r.real_returndate,
+			   r.returndate,
+			   r.userid,
+			   r.price,
+			   c.carname
+		  FROM reservation r 
+		  JOIN car c 
+		    ON r.carid = c.carid
+		 WHERE userid = #{userId}
+		 <if test="startDate!=null and startDate!=''"> 
+			   and rentdate between #{startDate} and #{endDate}
+		 </if>
+	  ORDER BY rentdate desc
+	</select>
+	
+	
+	<select id="totalCountQA" resultType="int">
+		SELECT count(*)
+		  FROM qaboard
+		 WHERE userid = #{userId}
+	</select>
+	
+	<select id="totalCountSearchQA" parameterType="MyQADTO" resultType="int">
+		SELECT count(*)
+		  FROM qaboard
+		 WHERE userid = #{userId}
+		 <if test="startDate!=null and startDate!=''"> 
+			   and writeday between #{startDate} and #{endDate}
+		 </if>
+	</select>
+	
+	<select id="myQaList" parameterType="MyQADTO" resultType="QABoardDTO">
+		select a.num,
+			   a.title,
+			   a.content,
+			   to_char(a.writeday,'YYYY-mm-dd') writeday,
+			   a.type,
+			   a.userid,
+			   a.reproot,
+			   a.repstep from qaboard a, 
+                    (select reproot from qaboard 
+                    where userid=#{userId}) b  
+        where a.reproot = b.reproot
+         <if test="startDate!=null and startDate!=''"> 
+			   and writeday between #{startDate} and #{endDate}
+		 </if>
+     order by reproot desc, num asc
+	</select>
+	
+	
+	<select id="memberInfo" parameterType="string" resultType="MemberDTO">
+		SELECT userid,
+			   username,
+			   passwd,
+			   post,
+			   addr1,
+			   addr2,
+			   phone,
+			   birth,
+			   email,
+			   licensetype,
+			   licensenum
+		  FROM memberinfo
+		 WHERE userid = #{userid} 
+	</select>
+	
+	<update id="updateMember" parameterType="MemberDTO">
+		UPDATE memberinfo
+		  SET username = #{username}
+			  ,passwd = #{passwd}
+			  <if test="post=0"> 
+			   ,post = null
+		 	  </if>
+		 	  <if test="post!=0"> 
+			   ,post = #{post}
+		 	  </if> 
+			  ,addr1 = #{addr1}
+			  ,addr2 = #{addr2}
+			  ,phone = #{phone}
+			  ,birth = #{birth}
+			  ,email = #{email}
+			  ,licensetype = #{licensetype}
+			  ,licensenum = #{licensenum}
+		WHERE userid = #{userid} 
+	</update>
+	
+</mapper>

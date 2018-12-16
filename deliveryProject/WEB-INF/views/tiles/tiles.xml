@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">  
+ 
+<tiles-definitions>  
+  
+   <!-- base-definition -->
+   <definition name="base-definition"
+       template="/WEB-INF/views/tiles/layouts/defaultMainLayout.jsp">  
+       <put-attribute name="title" value="타일즈 탄다" />  
+       <put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />  
+       <put-attribute name="menu" value="" />  
+       <put-attribute name="body" value="" />  
+       <put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />  
+   </definition> 
+   
+   <!-- Home Page -->
+   <definition name="*/*" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp" />  
+   </definition>  
+   
+   <definition name="index" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/main/index.jsp" />  
+   </definition>  
+   
+   
+    <!-- base-admin-definition -->
+   <definition name="admin-definition"
+       template="/WEB-INF/views/tiles/layouts/defaultAdminLayout.jsp">  
+       <put-attribute name="title" value="어드민 탄다" />  
+       <put-attribute name="header" value="/WEB-INF/views/common/admin_header.jsp" />  
+       <put-attribute name="menu" value="/WEB-INF/views/common/admin_menu.jsp" />  
+       <put-attribute name="body" value="" />  
+       <put-attribute name="footer" value="" />  
+   </definition>  
+  
+   
+   <definition name="/admin/*" extends="admin-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/admin/{1}.jsp" />  
+   </definition>
+    <definition name="/*/*" extends="admin-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp" />  
+   </definition>    
+    <definition name="/admin_stock/*" extends="admin-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/admin_stock/{1}.jsp" />  
+   </definition>
+   <definition name="/notice/*" extends="admin-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/notice/{1}.jsp" />  
+   </definition>
+ 
+</tiles-definitions>

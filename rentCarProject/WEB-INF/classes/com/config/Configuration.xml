@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="com/config/jdbc.properties" />
+	
+	<typeAliases>
+		<typeAlias type="com.dto.MemberDTO" alias="MemberDTO" />
+		<typeAlias type="com.dto.BoardDTO" alias="BoardDTO" />
+		<typeAlias type="com.dto.ShopDTO" alias="ShopDTO"/>
+		<typeAlias type="com.dto.ReservationDTO" alias="ReservationDTO"/>
+		<typeAlias type="com.dto.CarDTO" alias="CarDTO"/>
+		<typeAlias type="com.dto.QABoardDTO" alias="QABoardDTO"/>
+		<typeAlias type="com.dto.MyRentCheckPageDTO" alias="MyRentCheckPageDTO"/>
+		<typeAlias type="com.dto.MyQADTO" alias="MyQADTO"/>
+
+	</typeAliases>
+   
+   
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="com/config/MemberMapper.xml" />
+		<mapper resource="com/config/BoardMapper.xml" />
+		<mapper resource="com/config/ReservationMapper.xml" />
+		<mapper resource="com/config/ShopMapper.xml" />
+		<mapper resource="com/config/CarMapper.xml" />
+		<mapper resource="com/config/QABoardMapper.xml" />
+		<mapper resource="com/config/MyPageMapper.xml" />
+	</mappers>
+</configuration>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="StockMapper">
+
+	<select id="Stock_list" resultType="Stock">
+		select
+		product_code,product_name,product_amount,product_minimum_amount,product_enter_date,product_enter_date,
+		product_e_amount,product_e_cost from (
+		select a.product_code as product_code,a.product_name as product_name,
+		a.product_amount as product_amount,
+		a.product_minimum_amount as product_minimum_amount, b.product_enter_date as
+		product_enter_date,
+		b.product_e_amount as product_e_amount, b.product_e_cost as product_e_cost
+		from STOCK_LIST a, STOCK_ENTER b
+		where a.product_code = b.product_code)
+	</select>
+
+	<update id="Stock_modify" parameterType="Stock">
+		update stock_list set
+		product_amount=#{product_amount} where product_code = #{product_code}
+	</update>
+	
+	<update id="Stock_Modify_plus" parameterType="Stock">
+		{call declare begin 
+		update stock_list set
+		product_amount = product_amount + #{product_amount} where product_code =  #{product_code};
+		update stock_enter set
+		product_enter_date = sysdate , product_e_amount = #{product_amount} where product_code = #{product_code};
+		end }
+	</update>
+	
+	<delete id="Stock_Delete" parameterType="Stock">
+	{call declare begin
+	delete from stock_enter where product_code in (#{product_code});
+	delete from stock_list where product_code in (#{product_code});
+	end }
+	</delete>
+	
+	<insert id="Stock_Insert" parameterType="Stock">
+	insert all
+	into STOCK_LIST values ('p'||sl_product_code_seq.nextval,#{product_name},#{product_amount},#{product_minimum_amount})
+	into stock_enter values ('p'||se_product_code_seq.nextval,sysdate,#{product_e_amount},#{product_e_cost})
+	select * from dual
+	</insert>
+	
+	<update id="Stock_Minimum_amount_modify" parameterType="Stock">
+		update stock_list set
+		product_minimum_amount=#{product_minimum_amount} where product_code = #{product_code}
+	</update>
+	
+	
+		<select id="addMenuForm" resultType="StockList">
+		SELECT product_code pCode,
+			   product_name pName
+		  FROM stock_list
+	</select>
+
+	<insert id="addMenu" parameterType="Menu">
+		INSERT INTO menu_list (
+					menu_code,
+					menu_img,
+					menu_category,
+					menu_name,
+					menu_price,
+					menu_content_1,
+					menu_content_2,
+					menu_recipe)
+			 VALUES ('m'||ml_menu_code_seq.nextval,
+					#{mImg},
+					#{mCategory},
+					#{mName},
+					#{mPrice},
+					#{mContent1},
+					#{mContent2},
+					#{mRecipe})
+	</insert>
+	
+	<select id="menuList" parameterType="string" resultType="Menu">
+		SELECT menu_code mCode,
+			   menu_img mImg,
+			   menu_category mCategory,
+			   menu_name mName,
+			   menu_price mPrice,
+			   menu_content_1 mContent1,
+			   menu_content_2 mContent2,
+			   menu_recipe mRecipe,
+			   menu_total_sales_amount mTotalSalesAmount
+		  FROM menu_list
+	     <if test='category != null and category !="null"'>
+		 WHERE menu_category = #{category}
+	     </if>		
+	</select>
+	
+	<delete id="delMenu" parameterType="string">
+		DELETE FROM menu_list
+		 WHERE menu_code = #{mCode}
+	</delete>
+</mapper>

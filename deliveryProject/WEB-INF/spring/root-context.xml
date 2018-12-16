@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	<!-- jdbc 파일 경로 알려주기 -->
+	<context:property-placeholder
+		location="classpath:com/config/jdbc.properties" />
+
+	<!--2-1 jdbc.properties 등록 -->
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp2.BasicDataSource">
+		<property name="driverClassName" value="${jdbc.driver}"></property>
+		<property name="url" value="${jdbc.url}"></property>
+		<property name="username" value="${jdbc.userid}"></property>
+		<property name="password" value="${jdbc.passwd}"></property>
+	</bean>
+
+	<!-- 3. SqlSessionFactoryBean 등록 -->
+	<bean id="factoryBean"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="mapperLocations">
+			<list>
+				<value>classpath:com/config/StockMapper.xml</value>
+				<value>classpath:com/config/OrderMapper.xml</value>
+				<value>classpath:com/config/MemberMapper.xml</value>
+				<value>classpath:com/config/NoticeMapper.xml</value>
+				<value>classpath:com/config/ProductMapper.xml</value>
+				<value>classpath:com/config/MypageMapper.xml</value>
+				<value>classpath:com/config/UserMapper.xml</value>
+			</list>
+		</property>
+		<property name="typeAliases">
+			<list>
+				<value>com.dto.Stock</value>
+				<value>com.dto.Order</value>
+				<value>com.dto.Member</value>
+				<value>com.dto.Notice</value>
+				<value>com.dto.Sales</value>
+				<value>com.dto.Product</value>
+				<value>com.dto.MyOrder</value>
+				<value>com.dto.Topping</value>
+				<value>com.dto.SalesList</value>
+				<value>com.dto.OrderInformationList</value>
+				<value>com.dto.OrderNotice</value>
+				<value>com.dto.Menu</value>
+				<value>com.dto.StockList</value>
+				<value>com.dto.Guest</value>
+				<value>com.dto.OrderMember</value>
+				<value>com.dto.AddMenu</value>
+				<value>com.dto.KakaoPay</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 4. SqlSessionTemplate 등록 -->
+	<bean id="sqlSessionTemplate"
+		class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg name="sqlSessionFactory"
+			ref="factoryBean">
+		</constructor-arg>
+	</bean>
+
+	<!-- transaction -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<tx:annotation-driven />
+	
+		<bean id="mailSender" class = "org.springframework.mail.javamail.JavaMailSenderImpl">
+      <property name="host" value="smtp.gmail.com" />
+      <property name="port" value="587" />
+      <property name="username" value="hi244244@gmail.com" />
+      <property name="password" value="jkakao56" />
+      <property name="javaMailProperties">
+         <props>
+               <prop key="mail.transport.protocol">smtp</prop>
+               <prop key="mail.smtp.auth">true</prop>
+               <prop key="mail.smtp.starttls.enable">true</prop>
+               <prop key="mail.debug">true</prop>
+         </props>
+      </property>
+   </bean>
+</beans>

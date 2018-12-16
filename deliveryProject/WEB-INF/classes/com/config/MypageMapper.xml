@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MypageMapper"> 
+	<resultMap type="Product" id="Product">
+      <result column="menu_code" property="menu_code"/>
+      <result column="menu_img" property="menu_img"/>
+      <result column="menu_category" property="menu_category"/>
+      <result column="menu_name" property="menu_name"/>
+      <result column="menu_price" property="menu_price"/>
+      <result column="menu_content_1" property="menu_content_1"/>
+      <result column="menu_content_2" property="menu_content_2"/>
+      <result column="menu_recipe" property="menu_recipe"/>
+      <result column="menu_total_sales_amount" property="menu_total_sales_amount"/>
+   </resultMap>
+   	
+   	<resultMap type="Member" id="Member">
+      <result column="member_id" property="member_id"/>
+      <result column="member_name" property="member_name"/>
+      <result column="member_passwd" property="member_passwd"/>
+      <result column="member_phone" property="member_phone"/>
+      <result column="member_email" property="member_email"/>
+      <result column="member_gender" property="member_gender"/>
+      <result column="member_birthday" property="member_birthday"/>
+      <result column="member_post" property="member_post"/>
+      <result column="member_address1" property="member_address1"/>
+      <result column="member_address2" property="member_address2"/>
+      <result column="member_nickname" property="member_nickname"/>
+      <result column="member_sns" property="member_sns"/>
+      <result column="member_status" property="member_status"/>
+      <result column="member_joindate" property="member_joindate"/>
+      <result column="member_withdrawal" property="member_withdrawal"/>
+   </resultMap>
+   
+   
+   
+   <resultMap type="Sales" id="Sales">
+      <result column="order_code" property="order_code"/>
+      <result column="product_code" property="product_code"/>
+      <result column="menu_code" property="menu_code"/>
+      <result column="sales_amount" property="sales_amount"/>
+      <result column="sales_payment_date" property="sales_payment_date"/>
+      <result column="sales_price" property="sales_price"/>
+   </resultMap>
+   
+    <resultMap type="Order" id="Order">
+      <result column="order_code" property="order_code"/>
+      <result column="order_id" property="order_id"/>
+      <result column="order_tel" property="order_tel"/>
+      <result column="order_request" property="order_request"/>
+      <result column="order_people" property="order_people"/>
+      <result column="order_address" property="order_address"/>
+      <result column="order_status" property="order_status"/>
+      <result column="order_all_price" property="order_all_price"/>
+      <result column="sales_payment_date" property="sales_payment_date" />
+   </resultMap>
+   
+    <resultMap type="MyOrder" id="MyOrder">
+   	  <result column="count" property="count" />
+      <collection property="product" resultMap="Product"/>
+      <collection property="sales" resultMap="Sales"/>
+      <collection property="order" resultMap="Order"/>
+      <collection property="member" resultMap="Member"/>
+   </resultMap>
+
+
+
+	<select id="getInfoMember" parameterType="String" resultType="Member">
+		select    member_id      
+				, member_name 
+				, member_passwd   
+				, member_phone   
+				, member_email   
+				, member_gender   
+				, member_birthday 
+				, member_post  
+				, member_address1 
+				, member_address2
+				, member_nickname 
+				, member_sns     
+				, member_status  
+				, member_joindate 
+				, member_withdrawal
+		from member_list
+		where member_id = #{member_id}
+	</select>
+	<update id="updateMypage" parameterType="Member">
+		update MEMBER_LIST set 
+		member_name=#{member_name}
+		<if test="#{member_passwd}!=null">
+		,member_passwd=#{member_passwd}
+		</if>
+		<if test="#{member_nickname}!=null">
+		,member_nickname=#{member_nickname}
+		</if>
+		<if test="#{member_phone}!=null">
+		,member_phone=#{member_phone}
+		</if> 
+		<if test="#{member_email}!=null">
+		,member_email=#{member_email}
+		</if> 
+		<if test="#{member_post}!=null">
+		,member_post=#{member_post}
+		</if> 
+		<if test="#{member_address1}!=null">
+		,member_address1=#{member_address1}
+		</if> 
+		<if test="#{member_address2}!=null">
+		,member_address2=#{member_address2}
+		</if> 
+		where member_id = #{member_id}
+	</update>
+	
+	<select id="getMyOrder" resultMap="MyOrder" parameterType="String">
+		
+SELECT sl.order_code as order_code,
+            cl.count count,
+            ml.menu_name as menu_name, 
+            sl.menu_code as menu_code,
+            sl.sales_amount as sales_amount,
+            ol.order_id as order_id,
+            ol.order_tel asorder_tel,
+            ol.order_request as order_request,
+            ol.order_people as order_people,
+            ol.order_address as order_address,
+            sl.sales_payment_date as sales_payment_date,
+            ol.order_all_price as order_all_price,
+            ol.order_status as order_status
+        FROM (SELECT * FROM sales_list WHERE ROWID IN (SELECT min(ROWID) FROM sales_list GROUP BY order_code)) sl
+            , menu_list ml
+            , order_information_list ol
+            , STOCK_LIST stl
+            , (SELECT order_code, count(*) as count from sales_list
+                GROUP BY order_code) cl
+       WHERE sl.order_code= ol.order_code
+       AND sl.order_code = cl.order_code
+       AND sl.menu_code = ml.menu_code(+)
+       AND sl.product_code = stl.product_code(+)
+       AND ol.order_id = #{member_id}
+     ORDER BY sl.sales_payment_date desc
+
+	</select>
+	
+</mapper>

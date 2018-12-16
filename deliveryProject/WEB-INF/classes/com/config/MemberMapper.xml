@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MemberMapper">
+
+	<insert id="addMember" parameterType="Member">
+		INSERT INTO MEMBER_LIST(
+			  MEMBER_ID
+            , MEMBER_NAME 
+            , MEMBER_PASSWD 
+            , MEMBER_PHONE 
+            , MEMBER_EMAIL 
+            , MEMBER_GENDER
+            , MEMBER_BIRTHDAY
+            , MEMBER_POST
+            , MEMBER_ADDRESS1
+            , MEMBER_ADDRESS2
+            , MEMBER_NICKNAME
+            					)
+		VALUES(#{member_id}, #{member_name}, #{member_passwd}, #{member_phone}
+			 , #{member_email}, #{member_gender}  ,#{member_birthday}
+			 , #{member_post} ,#{member_address1} ,#{member_address2}
+			 , #{member_nickname, jdbcType=VARCHAR})            
+	</insert>
+	
+	<select id="getLoginMember" resultType="Member" parameterType="Member">
+		select    member_id
+	            , member_name 
+	            , member_nickname
+	     from MEMBER_LIST
+	    where member_id = #{member_id}
+	      and member_passwd = #{member_passwd}
+	</select>
+	
+	<select id="checkID" resultType="string" parameterType="string">
+		select count(*) 
+		  from member_list 
+		 where member_id = #{member_id}
+	</select>
+</mapper>

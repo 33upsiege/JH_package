@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ 
+<mapper namespace="ProductMapper">
+<select id="productlist" resultType="Product">
+select menu_name,menu_img from menu_list where menu_category = '버거'
+</select>
+
+
+
+   <select id="getProduct" resultType="Product" parameterType="string">
+    	select menu_code ,menu_img ,menu_img2,menu_category,menu_name ,menu_price ,menu_content_1,menu_content_2 ,menu_recipe,menu_total_sales_amount
+    	 from menu_list where menu_category = #{menu_category}
+    </select>
+    
+    <select id="getProductCode" resultType="Product" parameterType="string">
+    	select menu_code ,menu_img ,menu_img2,menu_category,menu_name ,menu_price ,menu_content_1,menu_content_2 ,menu_recipe,menu_total_sales_amount
+    	 from menu_list where menu_code = #{menu_code}
+    </select>
+    
+    <select id="getProductRecommend"  resultType="Product">
+  	  select menu_code ,menu_img ,menu_img2,menu_category,menu_name ,menu_price ,menu_content_1,menu_content_2 ,menu_recipe,menu_total_sales_amount
+    	 from menu_list ORDER BY menu_total_sales_amount DESC
+    </select> 
+    
+	
+
+</mapper>

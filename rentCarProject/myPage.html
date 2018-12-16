@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+  <meta charset="UTF-8">
+  <title> New Document </title> 
+  <meta name="Generator" content="EditPlus"> 
+  <meta name="Author" content=""> 
+  <meta name="Keywords" content=""> 
+  <meta name="Description" content=""> 
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
+  </head> 
+  <style type="text/css"> 
+    @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+      
+      
+      /*Reset*/ 
+ *{margin:0; padding:0;} 
+ header, nav, aside, section, article, footer, hgroup{display:block;} 
+ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a,  
+ abbr, address, big, cite, code, del, dfn, em, font, img, ins,q, s, samp, small, strike,  
+ strong, sub, sup, tt, var, b,u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,  
+ table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: none 0; } 
+ html, body { width:100%; height:100%; } 
+ body { background-color:#fff;} 
+ body, input, button, textarea {font-size:12px; font-family: "NanumGothic", Verdana, "돋움", Dotum, Helvetica, AppleGothic, Sans-serif; color:#444; } 
+ h1, h2, h3, h4, h5, h6 { font-size:12px; text-align:left; } 
+ img, fieldset, iframe { border:0 none;} 
+ table, div { border-collapse: collapse;} 
+ select, textarea { border: 1px solid #B7B6B6; background: #FFFFFF; color: #000000; font-size: 12px; vertical-align: middle; } 
+ textarea { overflow:auto; } 
+ select, input, img, li { vertical-align: middle; text-align:left;} 
+ address, caption, cite, code, dfn, em, strong, th, var { font-style : normal; font-weight : normal; } 
+ ul, li, ol { list-style-type: none;} 
+ legend,  caption { display: none; } 
+ hr { border-collapse:collapse; display:none; } 
+ strong{font-weight:bold;} 
+      
+ a:link { text-decoration: none;}
+ a:visited { color: black; text-decoration: none;}
+ a:hover { color: blue; text-decoration: underline;}
+
+  table {
+width: 100%;
+border-top: 1px solid orange;
+border-collapse: collapse;
+}
+td {
+border-bottom: 1px solid #083763;
+padding: 10px;
+font-size: 15px;
+ height: 22px;
+}
+/*
+ 
+
+ .wrap{width:1080px;margin:0 auto;color:#000;} 
+ .wrap .header{height:80px;clear:both;width:1080px;background:red;line-height:80px;background:#083763} 
+ .wrap .header h1{float:left;} 
+ .wrap .header .menuwrap{float:left;width:500px;margin-left:300px;} 
+ .wrap .header .menuwrap ul{overflow:hidden;} 
+ .wrap .header .menuwrap li{float:left;width:100px;}  
+ .wrap .header .menuwrap li a{color:#fff;} 
+ .loginBox{float:right;} 
+ .loginBox li{display:inline-block;} 
+ .loginBox li  a{color:#000;} 
+ 
+
+ .wrap .header .menuwrap .subMenu{display:none;} 
+ .wrap .header .menuwrap.on .subMenu{display:block} 
+ .wrap .header .menuwrap .subMenu li a{color:orange} 
+ 
+
+
+ .bodyContent {height:500px;width:100%;} 
+ .bodyContent img{width:100%;} 
+       
+border: thick dashed black;
+font-family: 'Jeju Gothic', sans-serif;
+*/
+      
+/* */
+      .txt{}
+      .mypage_wrap{width: 100%;}
+      .mypage{
+          width: 1080px;
+          font-family: 'Jeju Gothic', sans-serif;
+          margin: 0 auto;
+      }
+      .mypage .mytitle{
+          width: 1070px;
+          height: 100px;
+          font-size: 30px;
+          padding-left: 30px;
+          line-height: 130px;
+          text-align: left;
+          border-bottom: 1px solid black;
+      }
+      .mypage .myinfo{
+          width: 1070px; 
+          height: 175px;  
+          overflow: hidden;
+          border-bottom: 1px solid black;
+      }
+      .mypage .myinfo .myinfo_Left{
+           margin : 40px;
+          float: left;
+          width: 355px;
+          height: 173px;
+      }
+      .mypage .myinfo .myinfo_Left .myimg1{
+          width: 90px; 
+          height: 90px; 
+          border: 20px solid black;
+      }
+       .mypage .myinfo .myinfo_Left .inline{
+          display: inline-block;
+          padding: 12px;
+          font-size: 15px
+      }
+      
+      .mypage .myinfo .myinfo_Left .txt{
+          width: 235px;
+      }
+      .mypage .myinfo .myinfo_Left .link{
+          width: 85px;
+      }
+      .mypage .myinfo .myinfo_Right{
+        margin : 50px;
+         float: right;
+          
+          width: 500px;
+          height: 173px;
+      }
+      .mypage .myinfo .myinfo_Right .right1{
+          float: right;
+          font-size: 17px;    
+        display: inline-block;
+          margin-right: 200px;
+      }
+        .mypage .myinfo .myinfo_Right .right2{
+             float: right;
+            font-size: 17px;
+         display: inline-block;
+            margin-right: 100px;
+      }
+      .mypage .myinfo .myinfo_Right .txt{
+          font-size: 50px;
+      }
+      
+      .mypage .rentinfo{
+          
+          width: 1070px;
+          height: 100px;
+          font-size: 30px;
+          padding-left: 30px;
+          line-height: 130px;
+          text-align: left; 
+      } 
+      .mypage .rentinfo_box{
+          width: 1050px;
+          border: 1px solid black;
+          
+          
+      }   
+      .mypage .rentinfo_box .rentinfo_table{
+       margin-top: 20px;
+       margin : auto;
+      }   
+      .mypage .rentinfo_box .rentinfo_table .col{
+       font-size: 16px; 
+       text-align: center;
+       width: 20%;
+       height: 50px;
+       border: 1px solid black;
+    
+      } 
+      
+
+</style> 
+ 
+
+<body>
+<div class="mypage_wrap">
+<div class="mypage">
+   <h2 class="mytitle">마이페이지</h2>
+    <div class="myinfo">
+        <div class="myinfo_Left">
+           <span class="myimg"><!-- <img src="" alt="" class="myimg1">-->
+               <img src="http://placehold.it/90x90" />
+           </span>
+           <div class="inline">
+                <p class="txt">XXX님, 반갑습니다.</p><br>
+                <a href="" class="link">내 정보 관리</a>
+            </div>
+        </div>
+        <div class="myinfo_Right">
+           <div class="right1">
+            <a href="#" class="myinfo_coupon">
+            <span class="tit">쿠폰</span><br>
+            <span class="txt">X장</span>
+            </a>
+            </div>
+            <div class="right2">
+            <a href="#" class="myinfo_point">
+            <span class="tit">포인트</span><br>
+            <span class="txt">XP</span>
+            </a>
+            </div>
+        </div>
+    </div><!-- end myinfo -->
+    <h3 class="rentinfo">최근 예약내역 </h3>
+    <div class="rentinfo_box">
+        <table class="rentinfo_table">
+            <caption>최근 예약내역</caption>
+            
+            <thead>
+                <tr>
+                    <th class="col">차량 이름</th>
+                    <th class="col">대여 지역</th>
+                    <th class="col">랜트일</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col">붕붕카1</td>
+                    <td class="col">제주시 제주구 제주도</td>
+                    <td class="col"><a href="#">####년 ##월 ##일 ~ ####년 ##월 ##일</a></td>
+                </tr>
+                <tr>
+                  <td class="col">붕붕카1</td>
+                    <td class="col">제주시 제주구 제주도</td>
+                    <td class="col"><a href="#">####년 ##월 ##일 ~ ####년 ##월 ##일</a></td>
+                </tr>
+                <tr>
+                   <td class="col">붕붕카1</td>
+                    <td class="col">제주시 제주구 제주도</td>
+                    <td class="col"><a href="#">####년 ##월 ##일 ~ ####년 ##월 ##일</a></td>
+                </tr>
+            </tbody>
+        </table> 
+    </div> 
+      <h3 class="rentinfo">1:1 문의 </h3>
+    <div class="rentinfo_box">
+        <table class="rentinfo_table">
+            <caption>최근 예약내역</caption>
+            
+            <thead>
+                <tr>
+                    <th class="col">문의 날짜</th>
+                    <th class="col">문의 제목</th>
+                    <th class="col">답변여부</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col">문의1</td>
+                    <td class="col"><a href="#">문의합니다 1111</a></td>
+                    <td class="col">답변 대기중</td>
+                </tr>
+                <tr>
+                  <td class="col">문의2</td>
+                    <td class="col"><a href="#">또 문의합니다2222</a></td>
+                    <td class="col">답변 완료</td>
+                </tr>
+                <tr>
+                   <td class="col">문의3</td>
+                    <td class="col"><a href="#">문의합니다 3333</a></td>
+                    <td class="col">답변 완료</td>
+                </tr>
+            </tbody>
+        </table> 
+    </div>  
+</div><!-- end myPage-->
+</div><!-- mypage_wrap-->
+</body>
+</html>

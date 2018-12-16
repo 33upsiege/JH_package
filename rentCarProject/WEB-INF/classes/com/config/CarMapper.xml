@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.car">
+	
+	<!-- 
+	private String carId;
+	private String carType;
+	private String carName;
+	private String manufacturedCom;
+	private String color;
+	private String price;
+	private String image;
+	private String state;
+	 -->
+	
+	<select id="carAllList" parameterType="CarDTO" resultType="CarDTO">
+		select carid carId,
+			   cartype carType,
+			   carname carName,
+			   manufactured_com manufacturedCom,
+			   color,
+			   price,
+			   image,
+			   shopid shopId,
+			   state
+		  from car
+		 where state = 'N' and shopId = #{shopId} 
+		 <if test='carType != null and carType != "null"' >
+		  	and carType = #{carType}
+		  </if> 
+	</select>
+	
+</mapper>

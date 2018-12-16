@@ -1,0 +1,173 @@
+@charset "UTF-8";
+
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+{margin:0; padding:0;}
+
+*{font-family: 'Jeju Gothic', sans-serif;}
+
+.mypage_header {
+	width:1080px;
+	overflow:hidden;
+	background:#fff;
+	left: 50%;
+	left:0; right:0; margin-left:auto; margin-right:auto;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.my_menu{
+	margin-bottom: 5px;
+	margin-top: 5px;
+	padding: 10px;
+	background-color: azure;
+}
+
+.mypage_hr{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.my_meun ul li {
+	list-style: none;
+	display: inline-block;
+}
+.my_meun ul li a{font-family: 'Jeju Gothic', sans-serif; margin-right: 30px;}
+
+.wrap_my_rentcheck{
+	width:1080px;
+	overflow:hidden;
+	background:#fff;
+	left: 50%;
+	left:0; right:0; margin-left:auto; margin-right:auto;
+	margin-bottom: 50px;
+}
+
+.table_my_rentcheck {
+	width: 100%;
+	border-top: 1px solid orange;
+	border-collapse: collapse;
+	margin-bottom: 18px;
+	margin-top: 20px;
+}
+.table_my_rentcheck  th{
+	height: 25px;
+    font-size: 14px;
+    background-color: azure;
+    border-bottom: 1px solid #083763;
+    
+}
+.table_my_rentchecke th, .table_my_rentcheck td {
+	padding: 5px;
+	height: 20px;
+	text-align: center;
+	border-bottom: 1px solid #083763;
+}
+
+.mypage_title{
+	font-size: 15px;
+}
+
+.my_hello{margin-top: 20px; margin-bottom: 20px;}
+.table_my_rentcheck td {font-size: 12px;}
+.period_div{margin-bottom:15px; padding: 0px; margin-top: 5px;}
+.date_input{ display:inline; width: 150px;height: 15px;vertical-align: bottom;}
+.period_p{display: inline; font-size: 12px;vertical-align: bottom;}
+.ui-datepicker-trigger{width:20px;height: 20px;margin-left: auto;margin-right: auto;vertical-align: bottom;}
+.ui-datepicker{ font-size: 12px; width: 200px; }
+.ui-datepicker select.ui-datepicker-month{ width:60px; font-size: 11px; }
+.ui-datepicker select.ui-datepicker-year{ width:60px; font-size: 11px; }
+
+.mypage_btn{display:inline-block;padding:3px 6px;margin-bottom:0;font-size:12px;font-weight:400;line-height:1.42857143;
+text-align:center;white-space:nowrap;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;
+cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-image:none;
+border:1px solid transparent;border-radius:4px;margin-right:5px; }
+
+
+ .textRight {text-align: right;border-bottom:1px dashed #000;padding-bottom:10px;}
+  .header_title{ height: 10px;background: #fff;color: black;padding: 20px 0;font-family: 'Jeju Gothic', sans-serif;} 
+.wrap_content{width:1080px; margin:0 auto; overflow:hidden;} 
+.subMenu{width: 20%;height: 600px; float:right;background-color:#083763;color:white;padding-top:50px;padding-left:20px;padding-right: 20px;}
+.img{display: inline-block;}
+   *{}
+hr { display: block;margin-top: 0.5em; margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 1px;} 
+/*  .information .menu_section{background:#083763; color:orange;} */
+.order{margin-top: 50px;}
+.resDate{width: 100%; height: 600px;margin-top: 30px;}
+.resStartDate, .resEndDate{display: inline;}
+.waring{margin-top: 30px;}
+.waringContent{background-color: azure;margin: 15px;padding: 18px}
+.selectType{background-color: azure;margin: 15px;padding: 23px}
+.preBtn{display: inline-block;}
+.last_btn{margin-top: 20PX;float: left;margin-bottom: 40px;text-align: center;width: 100%;}
+.mypage_update,.mypage_cancel,#address_btn{
+ padding: 0 18px;
+ height: 29px;
+ font-size: 12px;
+ font-weight: bold;
+ color: #527881;
+ text-shadow: 0 1px #e3f1f1;
+ background: #cde5ef;
+ border: 1px solid;
+ border-color: #b4ccce #b3c0c8 #9eb9c2;
+ border-radius: 16px;
+ outline: 0;
+ -webkit-box-sizing: content-box;
+ -moz-box-sizing: content-box;
+ box-sizing: content-box;
+ background-image: -webkit-linear-gradient(top, #edf5f8, #cde5ef);
+ background-image: -moz-linear-gradient(top, #edf5f8, #cde5ef);
+ background-image: -o-linear-gradient(top, #edf5f8, #cde5ef);
+ background-image: linear-gradient(to bottom, #edf5f8, #cde5ef);
+ -webkit-box-shadow: inset 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.15);
+ box-shadow: inset 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.15);
+ font-family: 'Jeju Gothic', sans-serif;}
+#choose_email {font-family: 'Jeju Gothic', sans-serif;}
+#choose_email option{font-family: 'Jeju Gothic', sans-serif;}
+#driver_licence{font-family: 'Jeju Gothic', sans-serif;}
+.nextBtn{display: inline-block; margin-left: 5px; }  
+.preBtn .finish{ width: 90px;height: 40px;text-align: center;font-size: 15px;font-family: 'Jeju Gothic', sans-serif;}
+.nextBtn .cancel{ width: 90px;height: 40px;text-align: center;font-size: 15px;font-family: 'Jeju Gothic', sans-serif;}
+.phone1 {width:57px;height:25px; text-align:center;}
+.phone2 {width:52px;height:22px; text-align:center;}
+.phone3 {width:52px;height:22px; text-align:center;}
+ .information  select, addressTable select{
+       width: 180px;
+       height: 20px;
+   }
+ .information input, addressTable input{
+       width: 180px;
+       height: 20px;
+   }
+.order button{width: 50px;padding: 5px; font-size: 15px; font-family: 'Jeju Gothic', sans-serif;}
+   
+.information table ,.addressTable table{
+   width: 100%;
+   border-top: 1px solid orange;
+   border-collapse: collapse;
+ }
+.information td,.addressTable td {
+   border-bottom: 1px solid #ccc;
+   padding: 10px;
+   font-size: 15px;
+    height: 22px;
+    font-family: 'Jeju Gothic', sans-serif;
+ }
+.header_title .title{
+       font-size: 20px;
+       margin-top: 20px;
+       margin-bottom: 20px;
+   }
+.information, .addressTable{
+       margin-bottom: 30px;
+   }
+.address_Table input{height:22px;}
+.mypage_user{
+	border:none;
+}
+
+#complete {
+    margin-top: 100px;
+    margin-bottom: 250px;
+    text-align: center;
+}
+   
+.mypage_hover li a:hover{border-bottom:3px solid #083763} 

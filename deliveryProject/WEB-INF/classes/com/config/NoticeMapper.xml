@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="NoticeMapper">
+
+	<resultMap type="Menu" id="Menu">
+		<result column="menu_code" property="mCode"/>
+		<result column="menu_img" property="mImg"/>
+		<result column="menu_img2" property="mImg2"/>
+		<result column="menu_category" property="mCategory"/>
+		<result column="menu_name" property="mName"/>
+		<result column="menu_price" property="mPrice"/>
+		<result column="menu_content_1" property="mContent1"/>
+		<result column="menu_content_2" property="mContent2"/>
+		<result column="menu_recipe" property="mRecipe"/>
+		<result column="menu_total_sales_amount" property="mTotalSalesAmount"/>
+	</resultMap>
+	
+	<resultMap type="SalesList" id="SalesList">
+		<result column="order_code" property="orderCode"/>
+		<result column="menu_code" property="menuCode"/>
+		<result column="sales_amount" property="salesAmount"/>
+		<result column="sales_payment_date" property="salesPaymentDate"/>
+		<result column="sales_price" property="salesPrice"/>
+	</resultMap>
+	
+	 <resultMap type="OrderInformationList" id="OrderInformationList">
+		<result column="order_code" property="orderCode"/>
+		<result column="order_id" property="orderId"/>
+		<result column="order_tel" property="orderTel"/>
+		<result column="order_request" property="orderRequest"/>
+		<result column="order_people" property="orderPeople"/>
+		<result column="order_address" property="orderAddress"/>
+		<result column="order_status" property="orderStatus"/>
+		<result column="order_all_price" property="orderAllPrice"/>
+		<result column="ordercount" property="orderCount" />
+	</resultMap>
+	
+	 <resultMap type="OrderNotice" id="OrderNotice">
+		<collection property="menu" resultMap="Menu"/>
+		<collection property="salseList" resultMap="SalesList"/>
+		<collection property="orderList" resultMap="OrderInformationList"/>
+	</resultMap>
+	
+	<select id="getOrderNotice" resultMap="OrderNotice">
+		SELECT sl.order_code,
+			   cl.count orderCount,
+			   ml.menu_name, 
+			   sl.menu_code,
+			   sl.sales_amount,
+			   sl.sales_payment_date,
+			   ol.order_all_price,
+			   ol.order_status
+		  FROM (SELECT * FROM sales_list WHERE ROWID IN (SELECT MAX(ROWID) FROM sales_list 
+		  		GROUP BY order_code)) sl
+		  	 , menu_list ml
+		  	 , order_information_list ol
+		  	 , (SELECT order_code, count(*) as count from sales_list
+                GROUP BY order_code) cl
+		 WHERE sl.order_code = ol.order_code
+		   AND sl.menu_code = ml.menu_code
+		   AND cl.order_code = sl.order_code
+           AND TO_CHAR(sl.sales_payment_date, 'YYMMDD') = TO_CHAR(sysdate, 'YYMMDD')
+	  ORDER BY sl.sales_payment_date desc	   
+	</select>
+	
+	<select id="getStockNotice" resultType="StockList">
+		SELECT product_code pCode,
+			   product_name pName,
+			   product_amount pAmount,
+			   product_minimum_amount pMinimumAmount
+		  FROM stock_list
+		 WHERE product_amount <![CDATA[<]]> product_minimum_amount  	   
+	</select>
+	
+	<update id="updateOrderStatus" parameterType="OrderInformationList">
+		UPDATE order_information_list 
+		   SET <if test='orderStatus=="1"'>
+		   			order_status = '2'
+		   	   </if>
+		   	   <if test='orderStatus=="2"'>
+		   			order_status = '3'
+		   	   </if>
+		   	   <if test='orderStatus=="3"'>
+		   			order_status = '4'
+		   	   </if>
+		   	   <if test='orderStatus=="4"'>
+		   			order_status = '5'
+		   	   </if>
+		   	   <if test='orderStatus=="5"'>
+		   			order_status = '6'
+		   	   </if>
+		   	   where order_code = #{orderCode}
+	</update>
+	
+</mapper>

@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+/* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain) */
+html, body, div, span, applet, object, iframe, 
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, 
+address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, 
+small, strike, strong, sub, sup, tt, var, b, u, i, center, 
+dl, dt, dd, ol, ul, li, fieldset,form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td, 
+article, aside, canvas, details, embed, figure, figcaption, footer, header,
+hgroup, menu, nav, output, ruby, section, summary, 
+time, mark, audio, video
+{ margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */ 
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section 
+{ display: block; } 
+body { line-height: 1; }
+ol, ul { list-style: none; } 
+blockquote, q { quotes: none; } 
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+
+@font-face {font-family: 'NanumGothic'; scr: url(/resources/fonts/NanumGothic.ttf) format('truetype');}
+body{font-family: 'NanumGothic';}
+
+.wrao_admin{width:1080px;overflow:hidden;background:#fff;margin:0 auto;} 
+.wrap_admin{height:20px; width: 100%; background-color: #B71C1C; color: white;}
+.admin_header{float:right; padding: 8px; display: none;}
+.admin_header a{color: white; text-decoration:none;}
+.rigth_menu{height: 100%; width: 15%; float:left; background-color: #B71C1C; padding: 20px; color: white; position: fixed;}
+#addMenu{height: 80%; width: 80%; float: right; margin: 20px;}
+#addMenu ul li {padding-bottom: 10px;}
+#listMenu{height: 80%; width:83%; float:right; margin:20px;}
+.control_goods li ul{display: none; background-color: #B71C1C; width: 80%; height: auto; color: white; padding:0px;margin:0px;border:0px;z-index:200;}
+.control_goods li:hover ul{display: block;}
+.control_goods li a{color: white;text-decoration:none;}
+.control_goods li {padding-bottom: 5px; padding-top: 10px;}
+.admin_logo{text-align:center; margin-bottom: 20px;}
+.header_login{float: right; padding: 8px;}
+.header_login ul li {display:inline; border-left:1px solid #999;padding:0 10px;}
+.order_notice{display: none; cursor: pointer;}
+.stock_notice{display: none;}
+.order_notice_box {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: 90%;
+	padding: 10px;
+	color: black;
+	overflow-y: scroll; 
+}
+.notice_box_span{margin:5px;}
+.notice_box_btn{margin:5px; text-align: right;}
+.close{position: absolute;top: 5px;right:5px;}
+.sysdate{padding:5px;}
+
+.stock_notice_box {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: auto;
+	padding: 10px;
+	color: black;
+}
+.notice_box_title{margin:5px; color: red;font-weight: bold;}
+.notice_box_a{margin:5px; text-align:right;}
+.notice_box_a a{text-decoration:none;}
+
+.img_wrap{width: 120px;display: inline-block;}
+.img_wrap img{max-width: 100%;}
+.menu_table th{border: 1px solid #083763; padding: 10px;}
+.menu_table td{border: 1px solid #083763; padding: 10px;}
